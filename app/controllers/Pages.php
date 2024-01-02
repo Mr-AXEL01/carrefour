@@ -24,4 +24,23 @@ class Pages extends Controller
         ];
         $this->view('pages/about', $data);
     }
+
+    public function Categories()
+    {
+        
+     
+        $this->view('admin/Categories');
+    }
+    public function Products()
+    {
+        
+     
+        $this->view('admin/Products');
+    }
+    public function Users()
+    {
+        
+     
+        $this->view('admin/Users');
+    }
 }
