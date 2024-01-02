@@ -7,16 +7,23 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <div class="container">
-        <div class="container-nav"></div>
+    <main>
+        <section>
+            <div class="container mx-auto flex justify-between ">
+                <div class="flex flex-wrap space-x-4 mb-4">
+                    <button class="bg-green-700 text-white px-3 py-1 rounded hover:text-black hover:bg-green-500">Fruit</button>
+                    <button class="bg-green-700 text-white px-3 py-1 rounded hover:text-black hover:bg-green-500">Vegitable</button>
+                    <button class="bg-green-700 text-white px-3 py-1 rounded hover:text-black hover:bg-green-500">Drinks</button>
+                </div>
+                <div class="flex items-center mb-4">
+                    <input type="text" placeholder="Search for products..." class="w-full px-4 py-2 border border-gray-300 rounded-4 focus:outline-none focus:border-blue-500">
+                    <button class="bg-blue-500 text-white px-4 py-2 rounded-r hover:bg-blue-700">Search</button>
+                </div>
+            </div>
+        </section>
+        <section class="products-by-category">
 
-        <div class="container-categories w-[35%] ">
-            <ul class="flex justify-between flex-wrap">
-                <li class="bg-green-500  p-2 rounded-[20px] text-center "><a href="#">Fruit</a></li>
-                <li class="bg-green-500  p-2 rounded-[20px] text-center "><a href="#">Vegetable</a></li>
-                <li class="bg-green-500  p-2 rounded-[20px] text-center "><a href="#">Drinks</a></li>
-            </ul> 
-        </div>
-    </div>
+        </section>
+    </main>
 </body>
 </html>
