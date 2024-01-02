@@ -9,7 +9,7 @@ class Client extends Controller
     public function index()
     {
         
-        $this->view('client/products');
+        $this->view('client/home');
     }
 
     public function products()
