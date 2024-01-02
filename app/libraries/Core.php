@@ -7,7 +7,7 @@
 
 class Core 
 {
-    protected $currentController = 'Home';
+    protected $currentController = 'Client';
     protected $currentMethod = 'index';
     protected $params = [];
 
