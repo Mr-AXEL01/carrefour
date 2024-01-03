@@ -14,12 +14,12 @@ class Controller
         return new $model();
     }
 
-    public function services($services){
+    public function service($service){
         // Require servi file
-        require_once '../app/services/implementations/' . $services . '.php';
+        require_once '../app/services/implementations/' . $service . '.php';
   
         // Instatiate servi
-        return new $services();
+        return new $service();
       }
 
     public function view($view, $data = [])

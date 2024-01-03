@@ -11,12 +11,12 @@ class ProductServiceImp implements ProductService
 
     public function create(product $product)
     {
-        $idProduct = $product->idProduct;
-        $name = $product->name;
-        $picture = $product->picture;
-        $qty = $product->qty;
-        $price = $product->price;
-        $idClient = $product->idClient;
+        $idProduct = $product->getidProduct();
+        $name = $product->getname();
+        $picture = $product->getpicture();
+        $qty = $product->getqty();
+        $price = $product->getprice();
+        $idClient = $product->getidClient();
 
 
         $this->db->query('INSERT INTO product VALUES (:idProduct, :name, :picture,:qty,:price,:idClient)');
@@ -43,12 +43,12 @@ class ProductServiceImp implements ProductService
 
     public function update(product $product)
     {
-        $idProduct = $product->idProduct;
-        $name = $product->name;
-        $picture = $product->picture;
-        $qty = $product->qty;
-        $price = $product->price;
-        $idClient = $product->idClient;
+        $idProduct = $product->getidProduct();
+        $name = $product->getname();
+        $picture = $product->getpicture();
+        $qty = $product->getqty();
+        $price = $product->getprice();
+        $idClient = $product->getidClient();
 
         $this->db->query('UPDATE product SET name = :name, picture = :picture, qty = :qty, price = :price , idClient = :idClient  WHERE idProduct = :idProduct');
         $this->db->bind(':idProduct', $idProduct);
