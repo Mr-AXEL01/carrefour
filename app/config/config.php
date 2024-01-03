@@ -12,7 +12,7 @@ define('DB_NAME', 'shareposts');
 define('APPROOT', dirname(dirname(__FILE__)));
 
 // URL Root
-define('URLROOT', 'http://localhost/carrefour');
+define('URLROOT', 'http://localhost:8001');
 
 // Site Name
 define('SITENAME', 'Carrefour');
