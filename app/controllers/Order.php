@@ -35,5 +35,7 @@ class Order extends controller {
         echo json_encode($order);
     }
 
-    
+    public function remove($id) {
+        $this->service->delete($id);
+    }
 }
