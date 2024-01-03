@@ -37,4 +37,29 @@ class Bill {
         return $this->idClient;
     }
 
+    #setter method
+
+    public function setIdBill ($idBill) {
+        $this->idBill = $idBill;
+    }
+    public function setDate ($date) {
+        $this->date = $date;
+    }
+
+    public function setLineItems ($lineItems) {
+        $this->lineItems = $lineItems;
+    }
+
+    public function setTotalAmount ($totalAmount) {
+        $this->totalAmount = $totalAmount;
+    }
+
+    public function setRefferences ($refferences) {
+        $this->refferences = $refferences;
+    }
+
+    public function setIdClient ($idClient) {
+        $this->idClient = $idClient;
+    }
+
 }
