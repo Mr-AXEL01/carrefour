@@ -17,4 +17,11 @@ class OrderService implements OrderServiceInterface {
 
         return $this->db->execute();
     }
+
+    public function read () {
+        $sql = "SELECT * FROM order" ;
+
+        $this->db->query($sql);
+        return $this->db->resultSet();
+    }
 }
