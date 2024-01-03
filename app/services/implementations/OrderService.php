@@ -35,4 +35,12 @@ class OrderService implements OrderServiceInterface {
 
         return $this->db->execute();
     }
+
+    public function delete($id) {
+        $this->db->query("DELETE FROM order WHERE idOrder = :idOrder");
+        $this->db->bind(":idOrder", $id);
+
+        return $this->db->execute();
+    }
+
 }
