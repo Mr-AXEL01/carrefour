@@ -14,5 +14,12 @@ class Order extends controller {
         echo json_encode($orders);
     }
 
+    public function add () {
+        $order = new $this->model();
+        $order->setIdOrder(uniqid(mt_rand(), true));
+        $order->setIdClient($_POST['idClient']);
+
+        $this->service->create($order);
+    }
     
 }
