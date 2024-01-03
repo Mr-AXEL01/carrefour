@@ -1,12 +1,12 @@
 <?php
 
 class Order {
+    private $db;
     private $idOrder;
     private $idClient;
 
-    public function __construct($idOrder, $idClient) {
-        $this->idOrder  = $idOrder;
-        $this->idClient = $idClient;
+    public function __construct() {
+        $this->db = Database::getInstance();   
     }
 
     #getter
@@ -23,6 +23,5 @@ class Order {
     }
     public function setIdClient($idClient) {
         $this->idClient = $idClient;
-        //
     }
 }
