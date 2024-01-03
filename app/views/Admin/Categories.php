@@ -37,14 +37,49 @@
                         </th>
                         <th
                             class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                            Picture
+                        </th>
+                        <th
+                            class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
                             Actions 
                         </th>
 
                     </tr>
                 </thead>
+<tbody>
+<?php foreach ($data as $category) { ?>
+                <tr>
+                    <td>
+                        <?= $category->id_client ?>
+                    </td>
+                    <td>
+                        <?= $category->name ?>
+                    </td>
+                    <td>
+                        <?= $category->description ?>
+                    </td>
+                    <td>
+                        <?= $category->picture ?>
+                    </td>
+
+                    <td class="flex gap-[10px]">
+                        <a href='<?= URL_ROOT ?>/pages/deleteClient?id=<?= $category->id_client ?>'>
+                            <img src="<?php echo URL_ROOT ?>/photos/supprimer.png" class="h-4 me-3 sm:h-6" />
+
+                        </a>
+                        <a href='<?= URL_ROOT ?>/pages/editClient?id_client=<?= $category->id_client ?>'>
+                            <!-- <span data-modal-target="authentication-modal" data-modal-toggle="authentication-modal"> -->
+
+                            </span>
+                            <img src="<?php echo URL_ROOT ?>/photos/editer.png" class="h-4 sm:h-6" />
+
+                        </a>
+                    </td>
+                </tr>
+            <?php } ?>
 
 
-
+</tbody>
             </table>
         </div>
     </div>
