@@ -5,7 +5,7 @@ class Bill {
     private $date;
     private $lineItems;
     private $totalAmount;
-    private $efferences;
+    private $refferences;
     private $idClient;
 
     public function __construct () {
@@ -27,6 +27,10 @@ class Bill {
 
     public function getTotalAmount () {
         return $this->totalAmount;
+    }
+
+    public function getRefferences () {
+        return $this->refferences;
     }
 
     
