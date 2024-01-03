@@ -1,11 +1,12 @@
 <?php
-class CategoryServiceImp implements CategoryServiceI
+class CategoryServiceImp implements CategoryService
 {
+
     private $db;
 
     public function __construct()
     {
-        $this->db = new Database();
+        $this->db = Database::getInstance();
     }
 
     public function create(category $category)
