@@ -8,7 +8,7 @@ class Categories extends Controller
     public function __construct()
     {
         $this->model = $this->model('Category');
-        $this->service = $this->services('CategoryServiceImp');
+        $this->service = $this->service('CategoryServiceImp');
     }
 
     public function read()
