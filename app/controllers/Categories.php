@@ -1,13 +1,17 @@
-<?php
+<?php 
+
 class Categories extends Controller
 {
+    private $model;
+    private $service;
+
     public function __construct()
     {
         $this->model = $this->model('Category');
         $this->service = $this->services('CategoryServiceImp');
     }
 
-    public function display()
+    public function read()
     {
         $categories= $this->service->read();
 
@@ -17,9 +21,11 @@ class Categories extends Controller
     public function add()
     {
         $category= new $this->model();
-        $category->id = uniqid(mt_rand(), true);
-        $category->name = $_POST['name'];
-        $category->address = $_POST['address'];
+        $category->setidCategory(uniqid(mt_rand(), true));
+        $category->setname($_POST['name']);
+        $category->setdescription($_POST['description']);
+        $category->setpicture($_POST['picture']);
+
 
         $this->service->create($category);
     }
@@ -27,9 +33,10 @@ class Categories extends Controller
     public function edit()
     {
         $category= new $this->model();
-        $category->id = $_POST['id'];
-        $category->name = $_POST['name'];
-        $category->address = $_POST['address'];
+        $category->setidCategory($_POST['idCategory']);
+        $category->setname($_POST['name']);
+        $category->setdescription($_POST['description']);
+        $category->setpicture($_POST['picture']);
 
         $this->service->update($category);
     }
@@ -43,7 +50,7 @@ class Categories extends Controller
 
     public function remove($id)
     {
-        $category= $this->service->delete($id);
+        $this->service->delete($id);
     }
 }
 ?>
