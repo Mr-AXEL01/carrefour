@@ -24,4 +24,15 @@ class OrderService implements OrderServiceInterface {
         $this->db->query($sql);
         return $this->db->resultSet();
     }
+
+    public function update (Order $order) {
+        $idOrder = $order->getIdOrder();
+        $idClient = $order->getIdClient();
+        
+        $this->db->query("UPDATE order SET idClient = :idClient WHERE idOrder = :idOrder");
+        $this->db->bind(":idOrder", $idOrder);
+        $this->db->bind(":idClient", $idClient);
+
+        return $this->db->execute();
+    }
 }
