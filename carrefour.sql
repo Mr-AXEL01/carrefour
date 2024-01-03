@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.1.1deb5ubuntu1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jan 03, 2024 at 09:38 AM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- Host: localhost:3306
+-- Generation Time: Jan 03, 2024 at 11:10 AM
+-- Server version: 8.0.35-0ubuntu0.22.04.1
+-- PHP Version: 8.1.2-1ubuntu2.14
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `admin` (
-  `idAdmin` varchar(255) DEFAULT NULL
+  `idAdmin` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -38,24 +38,23 @@ CREATE TABLE `admin` (
 --
 
 CREATE TABLE `bill` (
-  `idBill` varchar(255) NOT NULL,
+  `idBill` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
   `date` date DEFAULT NULL,
-  `lineItems` varchar(255) DEFAULT NULL,
-  `totalAmount` varchar(255) DEFAULT NULL,
-  `refferences` varchar(255) DEFAULT NULL,
-  `idClient` varchar(255) DEFAULT NULL
+  `lineItems` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `totalAmount` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `refferences` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `idClient` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cartofproduct`
+-- Table structure for table `cart`
 --
 
-CREATE TABLE `cartofproduct` (
-  `idProduct` varchar(255) DEFAULT NULL,
-  `idClient` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `cart` (
+  `idCart` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -64,10 +63,10 @@ CREATE TABLE `cartofproduct` (
 --
 
 CREATE TABLE `category` (
-  `idCategory` varchar(255) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `description` varchar(255) NOT NULL,
-  `picture` varchar(255) NOT NULL
+  `idCategory` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `description` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `picture` varchar(255) COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -77,7 +76,7 @@ CREATE TABLE `category` (
 --
 
 CREATE TABLE `client` (
-  `idClient` varchar(255) DEFAULT NULL
+  `idClient` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -87,8 +86,8 @@ CREATE TABLE `client` (
 --
 
 CREATE TABLE `order` (
-  `idOrder` varchar(255) NOT NULL,
-  `idClient` varchar(255) DEFAULT NULL
+  `idOrder` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `idClient` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -98,11 +97,11 @@ CREATE TABLE `order` (
 --
 
 CREATE TABLE `orderline` (
-  `idOrderLine` varchar(255) NOT NULL,
-  `qty` varchar(255) DEFAULT NULL,
-  `idProduct` varchar(255) DEFAULT NULL,
-  `idBill` varchar(255) DEFAULT NULL,
-  `idOrder` varchar(255) DEFAULT NULL
+  `idOrderLine` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `qty` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `idProduct` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `idBill` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `idOrder` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -112,12 +111,23 @@ CREATE TABLE `orderline` (
 --
 
 CREATE TABLE `product` (
-  `idProduct` varchar(255) NOT NULL,
-  `picture` varchar(255) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `qty` varchar(255) NOT NULL,
-  `price` varchar(255) DEFAULT NULL,
-  `idCategory` varchar(255) DEFAULT NULL
+  `idProduct` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `picture` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `qty` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `price` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `idCategory` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `productofcart`
+--
+
+CREATE TABLE `productofcart` (
+  `idProduct` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `idCart` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -127,14 +137,14 @@ CREATE TABLE `product` (
 --
 
 CREATE TABLE `user` (
-  `idUser` varchar(255) NOT NULL,
-  `profil` varchar(255) NOT NULL,
-  `fullName` varchar(50) NOT NULL,
-  `username` varchar(20) NOT NULL,
-  `email` varchar(20) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `phone` varchar(15) NOT NULL,
-  `adress` varchar(255) NOT NULL
+  `idUser` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `profil` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `fullName` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `username` varchar(20) COLLATE utf8mb4_general_ci NOT NULL,
+  `email` varchar(20) COLLATE utf8mb4_general_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `phone` varchar(15) COLLATE utf8mb4_general_ci NOT NULL,
+  `adress` varchar(255) COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -155,11 +165,10 @@ ALTER TABLE `bill`
   ADD KEY `idClient` (`idClient`);
 
 --
--- Indexes for table `cartofproduct`
+-- Indexes for table `cart`
 --
-ALTER TABLE `cartofproduct`
-  ADD KEY `idProduct` (`idProduct`),
-  ADD KEY `idClient` (`idClient`);
+ALTER TABLE `cart`
+  ADD PRIMARY KEY (`idCart`);
 
 --
 -- Indexes for table `category`
@@ -197,50 +206,17 @@ ALTER TABLE `product`
   ADD KEY `idCategory` (`idCategory`);
 
 --
+-- Indexes for table `productofcart`
+--
+ALTER TABLE `productofcart`
+  ADD KEY `idProduct` (`idProduct`),
+  ADD KEY `idClient` (`idCart`);
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`idUser`);
-
---
---  for dumped tables
---
-
---
---  for table `bill`
---
-ALTER TABLE `bill`
-  MODIFY `idBill` varchar(255) NOT NULL ;
-
---
---  for table `category`
---
-ALTER TABLE `category`
-  MODIFY `idCategory` varchar(255) NOT NULL ;
-
---
---  for table `order`
---
-ALTER TABLE `order`
-  MODIFY `idOrder` varchar(255) NOT NULL ;
-
---
---  for table `orderline`
---
-ALTER TABLE `orderline`
-  MODIFY `idOrderLine` varchar(255) NOT NULL ;
-
---
---  for table `product`
---
-ALTER TABLE `product`
-  MODIFY `idProduct` varchar(255) NOT NULL ;
-
---
---  for table `user`
---
-ALTER TABLE `user`
-  MODIFY `idUser` varchar(255) NOT NULL ;
 
 --
 -- Constraints for dumped tables
@@ -250,46 +226,46 @@ ALTER TABLE `user`
 -- Constraints for table `admin`
 --
 ALTER TABLE `admin`
-  ADD CONSTRAINT `admin_ibfk_1` FOREIGN KEY (`idAdmin`) REFERENCES `user` (`idUser`);
+  ADD CONSTRAINT `admin_ibfk_1` FOREIGN KEY (`idAdmin`) REFERENCES `user` (`idUser`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `bill`
 --
 ALTER TABLE `bill`
-  ADD CONSTRAINT `bill_ibfk_1` FOREIGN KEY (`idClient`) REFERENCES `client` (`idClient`);
-
---
--- Constraints for table `cartofproduct`
---
-ALTER TABLE `cartofproduct`
-  ADD CONSTRAINT `cartofproduct_ibfk_1` FOREIGN KEY (`idProduct`) REFERENCES `product` (`idProduct`),
-  ADD CONSTRAINT `cartofproduct_ibfk_2` FOREIGN KEY (`idClient`) REFERENCES `client` (`idClient`);
+  ADD CONSTRAINT `bill_ibfk_1` FOREIGN KEY (`idClient`) REFERENCES `client` (`idClient`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `client`
 --
 ALTER TABLE `client`
-  ADD CONSTRAINT `client_ibfk_1` FOREIGN KEY (`idClient`) REFERENCES `user` (`idUser`);
+  ADD CONSTRAINT `client_ibfk_1` FOREIGN KEY (`idClient`) REFERENCES `user` (`idUser`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `order`
 --
 ALTER TABLE `order`
-  ADD CONSTRAINT `order_ibfk_1` FOREIGN KEY (`idClient`) REFERENCES `client` (`idClient`);
+  ADD CONSTRAINT `order_ibfk_1` FOREIGN KEY (`idClient`) REFERENCES `client` (`idClient`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `orderline`
 --
 ALTER TABLE `orderline`
-  ADD CONSTRAINT `orderline_ibfk_1` FOREIGN KEY (`idProduct`) REFERENCES `product` (`idProduct`),
-  ADD CONSTRAINT `orderline_ibfk_2` FOREIGN KEY (`idBill`) REFERENCES `bill` (`idBill`),
-  ADD CONSTRAINT `orderline_ibfk_3` FOREIGN KEY (`idOrder`) REFERENCES `order` (`idOrder`);
+  ADD CONSTRAINT `orderline_ibfk_1` FOREIGN KEY (`idProduct`) REFERENCES `product` (`idProduct`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `orderline_ibfk_2` FOREIGN KEY (`idBill`) REFERENCES `bill` (`idBill`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `orderline_ibfk_3` FOREIGN KEY (`idOrder`) REFERENCES `order` (`idOrder`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `product`
 --
 ALTER TABLE `product`
-  ADD CONSTRAINT `product_ibfk_1` FOREIGN KEY (`idCategory`) REFERENCES `category` (`idCategory`);
+  ADD CONSTRAINT `product_ibfk_1` FOREIGN KEY (`idCategory`) REFERENCES `category` (`idCategory`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `productofcart`
+--
+ALTER TABLE `productofcart`
+  ADD CONSTRAINT `productofcart_ibfk_1` FOREIGN KEY (`idProduct`) REFERENCES `product` (`idProduct`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `productofcart_ibfk_2` FOREIGN KEY (`idCart`) REFERENCES `cart` (`idCart`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
