@@ -1,0 +1,66 @@
+<?php
+class CategoryServiceImp implements CategoryServiceI
+{
+    private $db;
+
+    public function __construct()
+    {
+        $this->db = new Database();
+    }
+
+    public function create(category $category)
+    {
+        $idCategory = $category->idCategory;
+        $name = $category->name;
+        $description = $category->description;
+        $picture = $category->picture;
+
+
+        $this->db->query('INSERT INTO category VALUES (:idCategory, :name, :description,:picture)');
+        $this->db->bind(':idCategory', $idCategory);
+        $this->db->bind(':name', $name);
+        $this->db->bind(':description', $description);
+        $this->db->bind(':picture', $picture);
+
+        
+        return $this->db->execute();
+    }
+
+    public function read()
+    {
+        $sql = "SELECT * FROM category";
+
+        $this->db->query($sql);
+        return $this->db->resultSet();
+    }
+
+    public function update(category $category)
+    {
+        $idCategory = $category->idCategory;
+        $name = $category->name;
+        $description = $category->description;
+        $picture = $category->picture;
+
+        $this->db->query('UPDATE category SET name = :name, description = :description, picture = :picture WHERE idCategory = :idCategory');
+        $this->db->bind(':idCategory', $idCategory);
+        $this->db->bind(':name', $name);
+        $this->db->bind(':description', $description);
+        $this->db->bind(':picture', $picture);
+        
+        return $this->db->execute();
+    }
+    public function delete($id)
+    {
+        $this->db->query('DELETE FROM category WHERE idCategory = :idCategory');
+        $this->db->bind(':idCategory', $id);
+        
+        return $this->db->execute();
+    }
+
+    public function fetch($id)
+    {
+        $this->db->query('SELECT * FROM category WHERE idCategory = :idCategory');
+        $this->db->bind(':idCategory', $id);
+        return $this->db->single();
+    }
+}
