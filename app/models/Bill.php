@@ -17,5 +17,8 @@ class Bill {
     public function getIdBill () {
         return $this->idBill;
     }
+    public function getDate () {
+        return $this->date;
+    }
 
 }
