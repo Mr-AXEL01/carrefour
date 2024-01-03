@@ -33,6 +33,8 @@ class Bill {
         return $this->refferences;
     }
 
-    
+    public function getIdClient () {
+        return $this->idClient;
+    }
 
 }
