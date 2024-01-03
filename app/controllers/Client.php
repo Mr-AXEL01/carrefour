@@ -12,7 +12,7 @@ class Client extends Controller
         $this->view('client/home');
     }
 
-    public function product()
+    public function products()
     {
         $this->view('client/products');
     }
