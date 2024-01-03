@@ -11,10 +11,10 @@ class CategoryServiceImp implements CategoryService
 
     public function create(category $category)
     {
-        $idCategory = $category->idCategory;
-        $name = $category->name;
-        $description = $category->description;
-        $picture = $category->picture;
+        $idCategory = $category->getIdCategory();
+        $name = $category->getname();
+        $description = $category->getdescription();
+        $picture = $category->getPicture();
 
 
         $this->db->query('INSERT INTO category VALUES (:idCategory, :name, :description,:picture)');
@@ -37,10 +37,11 @@ class CategoryServiceImp implements CategoryService
 
     public function update(category $category)
     {
-        $idCategory = $category->idCategory;
-        $name = $category->name;
-        $description = $category->description;
-        $picture = $category->picture;
+        $idCategory = $category->getIdCategory();
+        $name = $category->getname();
+        $description = $category->getdescription();
+        $picture = $category->getPicture();
+
 
         $this->db->query('UPDATE category SET name = :name, description = :description, picture = :picture WHERE idCategory = :idCategory');
         $this->db->bind(':idCategory', $idCategory);

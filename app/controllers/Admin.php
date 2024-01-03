@@ -2,16 +2,17 @@
 
 class Admin extends Controller
 {
+    private $db;
+     
+
     public function __construct()
     {
+         
     }
-
-
 
     public function Categories()
     {
-        
-     
+      
         $this->view('admin/Categories');
     }
     public function Products()
@@ -22,6 +23,7 @@ class Admin extends Controller
     }
     public function Users()
     {
+        
         
      
         $this->view('admin/Users');
