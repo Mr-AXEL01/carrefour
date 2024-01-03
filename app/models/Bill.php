@@ -25,6 +25,10 @@ class Bill {
         return $this->lineItems;
     }
 
+    public function getTotalAmount () {
+        return $this->totalAmount;
+    }
+
     
 
 }
