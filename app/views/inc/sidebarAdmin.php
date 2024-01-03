@@ -28,7 +28,7 @@
 
 
                 <div class="flex items-center">
-                    <img class="h-8 sm:w-8 w-full mr-4" src="<?php echo URLROOT; ?>/src/logo.png" alt="">
+                    <img class="h-8 sm:w-8 w-full mr-2" src="<?php echo URLROOT; ?>/src/logo.png" alt="">
                     <h2 class="text-base sm:text-2xl font-bold sm:my-5 text-white">Admin Panel</h2>
                 </div>
 
