@@ -23,5 +23,6 @@ class Order {
     }
     public function setIdClient($idClient) {
         $this->idClient = $idClient;
+        //
     }
 }
