@@ -30,5 +30,10 @@ class Order extends controller {
         $this->service->update($order);
     }
 
+    public function get($id) {
+        $order = $this->service->fetch($id);
+        echo json_encode($order);
+    }
+
     
 }
