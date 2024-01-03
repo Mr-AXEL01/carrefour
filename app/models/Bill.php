@@ -21,4 +21,10 @@ class Bill {
         return $this->date;
     }
 
+    public function getLineItems () {
+        return $this->lineItems;
+    }
+
+    
+
 }
