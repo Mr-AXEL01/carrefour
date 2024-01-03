@@ -21,5 +21,14 @@ class Order extends controller {
 
         $this->service->create($order);
     }
+
+    public function edit () {
+        $order = new $this->model();
+        $order->setIdOrder($_POST['idOrder']);
+        $order->setIdClient($_POST['idClient']);
+
+        $this->service->update($order);
+    }
+
     
 }
