@@ -1,6 +1,6 @@
 <?php
 
-interface CategoryServiceI
+interface CategoryService
 {
     public function create(category $category);
     public function read();
