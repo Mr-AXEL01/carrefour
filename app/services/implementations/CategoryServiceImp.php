@@ -1,6 +1,7 @@
 <?php
-class CategoryServiceImp implements CategoryServiceI
+class CategoryServiceImp implements CategoryService
 {
+    
     private $db;
 
     public function __construct()

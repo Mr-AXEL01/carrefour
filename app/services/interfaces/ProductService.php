@@ -1,6 +1,6 @@
 <?php
 
-interface ProductServiceI
+interface ProductService
 {
     public function create(product $product);
     public function read();
