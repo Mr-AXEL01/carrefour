@@ -7,7 +7,7 @@
     <script src="https://kit.fontawesome.com/1a53866afa.js" crossorigin="anonymous"></script>
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <link rel="stylesheet" href="<?php echo URLROOT;?>/css/style.css">
+    <link rel="stylesheet" href="<?= URLROOT . '/css/style.css' ;?>">
 
     <!-- links for footer -->
     <link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/styles/tailwind.css">
