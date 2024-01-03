@@ -1,4 +1,4 @@
-<nav class="relative px-4 py-4 flex justify-between items-center bg-white">
+<nav class="h-12 relative px-4 py-4 flex justify-between items-center bg-white">
     <div class="w-[260px] h-[10%]">
         <img class="w-[50%]" src='<?php echo URLROOT . "/public/images/carrefour2.jpg"; ?>' alt="LogoCarrefour">
     </div>
@@ -47,7 +47,6 @@
 
 
     </ul>
-
     <a class="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-gray-50 hover:bg-gray-100 text-sm text-red-600 font-bold  rounded-xl transition duration-200"
         href="#">
         <span class="flex items-center">
