@@ -16,4 +16,9 @@ class Client extends Controller
     {
         $this->view('client/products');
     }
+
+    public function order()
+    {
+        $this->view('client/order');
+    }
 }

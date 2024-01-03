@@ -1,8 +1,12 @@
-/* hidden scroll bare form home */
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
 #categorie::-webkit-scrollbar {
     display: none;
   }
 
+* {
+    font-family: 'Rubik', sans-serif;
+}
   #marque::-webkit-scrollbar {
     display: none;
   }
