@@ -17,8 +17,9 @@ class Database
     private $connection;
     private $stmt;
     private $error;
+    private static $_instance ;
 
-    public function __construct()
+    private function __construct()
     {
         $dsn = "mysql:host={$this->host};dbname={$this->dbname}";
         $options = [
@@ -32,6 +33,16 @@ class Database
             $this->error = $e->getMessage();
             echo $this->error;
         }
+    }
+    public static function getInstance(){
+
+        if (is_null(self::$_instance)) {
+
+            self::$_instance = new self();
+        }
+
+        return self::$_instance;
+
     }
 
     public function query($sql)
@@ -82,3 +93,4 @@ class Database
         return $this->stmt->rowCount();
     }
 }
+?>
