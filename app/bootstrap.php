@@ -1,12 +1,26 @@
-<?php 
-// Load Config 
-require_once 'config/config.php';
+<?php
+  // Load Config
+  require_once 'config/config.php';
 
-// Load Helpers
-require_once 'helpers/url_helper.php';
-// require_once 'helpers/session_helper.php';
+  // Autoload Core Libraries
+  function Autoloader($class) {
+    $paths = [
+        APPROOT."/libraries/",
+        APPROOT."/services/interfaces/",
+        APPROOT."/services/implementations/",
+        APPROOT."/models/"
+    ];
 
-// Autoload Core Libraries
-spl_autoload_register(function($className) {
-    require_once "libraries/{$className}.php";
-});
+
+    foreach ($paths as $path) {
+        $file = $path . $class . '.php';
+        if (file_exists($file)) {
+            require_once $file;
+        }
+    }
+}
+
+
+spl_autoload_register('Autoloader');
+
+  
