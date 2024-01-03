@@ -43,4 +43,11 @@ class OrderService implements OrderServiceInterface {
         return $this->db->execute();
     }
 
+    public function fetch($id) {
+        $this->db->query("SELECT * FROM order WHERE idOrder = :idOrder");
+        $this->db->bind(":idOrder", $id);
+
+        return $this->db->single();
+    }
+
 }
