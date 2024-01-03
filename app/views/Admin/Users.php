@@ -7,7 +7,7 @@
         <div class="rounded-t mb-0 px-4 py-3 border-0 bg-[#0077b6] ">
             <div class="flex flex-wrap items-center text-white ">
                 <div class="relative  w-full px-4 max-w-full flex-grow flex-1">
-                    <h3 class="font-semibold text-base text-blueGray-700">Utilisateurs</h3>
+                    <h3 class="font-semibold text-base text-blueGray-700">Utilisateur</h3>
                 </div>
                 <div class="relative w-full px-4 max-w-full flex-grow flex-1 text-right">
                     <span data-modal-target="crud-modal" data-modal-toggle="crud-modal">
