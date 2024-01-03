@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `admin` (
-  `idAdmin` int(11) DEFAULT NULL
+  `idAdmin` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -38,12 +38,12 @@ CREATE TABLE `admin` (
 --
 
 CREATE TABLE `bill` (
-  `idBill` int(11) NOT NULL,
+  `idBill` varchar(255) NOT NULL,
   `date` date DEFAULT NULL,
   `lineItems` varchar(255) DEFAULT NULL,
   `totalAmount` varchar(255) DEFAULT NULL,
   `refferences` varchar(255) DEFAULT NULL,
-  `idClient` int(11) DEFAULT NULL
+  `idClient` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -53,8 +53,8 @@ CREATE TABLE `bill` (
 --
 
 CREATE TABLE `cartofproduct` (
-  `idProduct` int(11) DEFAULT NULL,
-  `idClient` int(11) DEFAULT NULL
+  `idProduct` varchar(255) DEFAULT NULL,
+  `idClient` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -64,7 +64,7 @@ CREATE TABLE `cartofproduct` (
 --
 
 CREATE TABLE `category` (
-  `idCategory` int(11) NOT NULL,
+  `idCategory` varchar(255) NOT NULL,
   `name` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL,
   `picture` varchar(255) NOT NULL
@@ -77,7 +77,7 @@ CREATE TABLE `category` (
 --
 
 CREATE TABLE `client` (
-  `idClient` int(11) DEFAULT NULL
+  `idClient` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -87,8 +87,8 @@ CREATE TABLE `client` (
 --
 
 CREATE TABLE `order` (
-  `idOrder` int(11) NOT NULL,
-  `idClient` int(11) DEFAULT NULL
+  `idOrder` varchar(255) NOT NULL,
+  `idClient` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -98,11 +98,11 @@ CREATE TABLE `order` (
 --
 
 CREATE TABLE `orderline` (
-  `idOrderLine` int(11) NOT NULL,
+  `idOrderLine` varchar(255) NOT NULL,
   `qty` varchar(255) DEFAULT NULL,
-  `idProduct` int(11) DEFAULT NULL,
-  `idBill` int(11) DEFAULT NULL,
-  `idOrder` int(11) DEFAULT NULL
+  `idProduct` varchar(255) DEFAULT NULL,
+  `idBill` varchar(255) DEFAULT NULL,
+  `idOrder` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -112,12 +112,12 @@ CREATE TABLE `orderline` (
 --
 
 CREATE TABLE `product` (
-  `idProduct` int(11) NOT NULL,
+  `idProduct` varchar(255) NOT NULL,
   `picture` varchar(255) NOT NULL,
   `name` varchar(255) NOT NULL,
   `qty` varchar(255) NOT NULL,
   `price` varchar(255) DEFAULT NULL,
-  `idCategory` int(11) DEFAULT NULL
+  `idCategory` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -127,7 +127,7 @@ CREATE TABLE `product` (
 --
 
 CREATE TABLE `user` (
-  `idUser` int(11) NOT NULL,
+  `idUser` varchar(255) NOT NULL,
   `profil` varchar(255) NOT NULL,
   `fullName` varchar(50) NOT NULL,
   `username` varchar(20) NOT NULL,
@@ -203,44 +203,44 @@ ALTER TABLE `user`
   ADD PRIMARY KEY (`idUser`);
 
 --
--- AUTO_INCREMENT for dumped tables
+--  for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `bill`
+--  for table `bill`
 --
 ALTER TABLE `bill`
-  MODIFY `idBill` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idBill` varchar(255) NOT NULL ;
 
 --
--- AUTO_INCREMENT for table `category`
+--  for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `idCategory` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idCategory` varchar(255) NOT NULL ;
 
 --
--- AUTO_INCREMENT for table `order`
+--  for table `order`
 --
 ALTER TABLE `order`
-  MODIFY `idOrder` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idOrder` varchar(255) NOT NULL ;
 
 --
--- AUTO_INCREMENT for table `orderline`
+--  for table `orderline`
 --
 ALTER TABLE `orderline`
-  MODIFY `idOrderLine` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idOrderLine` varchar(255) NOT NULL ;
 
 --
--- AUTO_INCREMENT for table `product`
+--  for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `idProduct` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idProduct` varchar(255) NOT NULL ;
 
 --
--- AUTO_INCREMENT for table `user`
+--  for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `idUser` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idUser` varchar(255) NOT NULL ;
 
 --
 -- Constraints for dumped tables

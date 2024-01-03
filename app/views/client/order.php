@@ -24,7 +24,7 @@
                         </div>
                     </div>
                     <div class="flex items-center m-2">
-                        <h1>$19.88</h1>
+                        <h1 class="text-xl font-bold">$19.88</h1>
                     </div>
                 </div>
             </div>
