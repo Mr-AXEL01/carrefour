@@ -14,6 +14,14 @@ class Controller
         return new $model();
     }
 
+    public function services($services){
+        // Require servi file
+        require_once '../app/services/implementations/' . $services . '.php';
+  
+        // Instatiate servi
+        return new $services();
+      }
+
     public function view($view, $data = [])
     {
         if (file_exists("../app/views/{$view}.php")) {
