@@ -2,7 +2,7 @@
 
 class ProductOfCart{
     private $idProduct;
-    private $idClient;
+    private $idCart;
 
     public function __construct(){
         
@@ -19,12 +19,12 @@ class ProductOfCart{
     }
 
     // get and set id client
-    public function getIdClientt(){
-        return $this->idClient;
+    public function getIdCart(){
+        return $this->idCart;
     }
     
-    public function setIdClient($idClient){
-        $this->idClient = $idClient;
+    public function setIdCart($idCart){
+        $this->idCart = $idCart;
     }
 }
 
