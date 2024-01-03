@@ -8,4 +8,8 @@ class Bill {
     private $efferences;
     private $idClient;
 
+    public function __construct () {
+
+    }
+    
 }
