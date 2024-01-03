@@ -8,7 +8,7 @@ class Products extends Controller
     public function __construct()
     {
         $this->model = $this->model('Product');
-        $this->service = $this->services('ProductServiceImp');
+        $this->service = $this->service('ProductServiceImp');
     }
 
     public function read()
