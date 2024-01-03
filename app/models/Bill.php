@@ -11,5 +11,11 @@ class Bill {
     public function __construct () {
 
     }
-    
+
+    #getter method
+
+    public function getIdBill () {
+        return $this->idBill;
+    }
+
 }
