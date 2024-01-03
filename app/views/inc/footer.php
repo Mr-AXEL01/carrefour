@@ -1,11 +1,12 @@
 <footer class="relative bg-blueGray-200 pt-8 pb-6">
     <div class="container mx-auto px-4">
         <div class="flex flex-wrap text-left lg:text-left">
+
             <div class="w-[20%] h-[20%]">
                 <img class="w-[50%]" src='<?php echo URLROOT . "/public/images/carrefour2.png"; ?>' alt="">
             </div>
 
-            <div class="w-full lg:w-6/12 ml-96 px-4">
+            <div class="w-full lg:w-1/2 lg:ml-8 px-4">
                 <div class="flex flex-wrap items-top mb-6">
 
                     <div class="w-full lg:w-4/12 px-4 ml-auto">
@@ -13,45 +14,46 @@
                         <ul class="list-unstyled">
                             <li>
                                 <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                                    href="">about us</a>
+                                    href="#">about us</a>
                             </li>
                             <li>
                                 <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                                    href="">FAQ</a>
+                                    href="#">FAQ</a>
                             </li>
                             <li>
                                 <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                                    href="">Espace prenium</a>
+                                    href="#">Espace prenium</a>
                             </li>
                             <li>
                                 <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                                    href="">Blog</a>
+                                    href="#">Blog</a>
                             </li>
                         </ul>
                     </div>
+
                     <div class="w-full lg:w-4/12 px-4">
                         <span class="block uppercase text-blueGray-500 text-sm font-semibold mb-2">Other
                             Resources</span>
                         <ul class="list-unstyled">
                             <li>
                                 <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                                    href="">MIT
-                                    License</a>
+                                    href="#">MIT License</a>
                             </li>
                             <li>
                                 <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                                    href="">Terms &amp; Conditions</a>
+                                    href="#">Terms &amp; Conditions</a>
                             </li>
                             <li>
                                 <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                                    href="">Privacy Policy</a>
+                                    href="#">Privacy Policy</a>
                             </li>
                             <li>
                                 <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                                    href="">Contact Us</a>
+                                    href="#">Contact Us</a>
                             </li>
                         </ul>
                     </div>
+
                     <div class="w-full lg:w-4/12 px-4 ml-auto">
                         <span class="block uppercase text-blueGray-500 text-sm font-semibold mb-2">Suivre Nous</span>
                         <ul class="list-unstyled">
@@ -59,66 +61,64 @@
                                 <span class="w-[40%]"><img class="w-[30%]"
                                         src='<?php echo URLROOT . "/public/images/Facebook.png"; ?>' alt=""></span>
                                 <span><a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                                        href="">Facebook</a>
+                                        href="#">Facebook</a>
                                 </span>
                             </li>
                             <li class="flex">
                                 <span class="w-[40%]"><img class="w-[30%]"
                                         src='<?php echo URLROOT . "/public/images/instagram.png"; ?>' alt=""></span>
                                 <span><a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                                        href="">Instagram</a>
+                                        href="#">Instagram</a>
                                 </span>
                             </li>
                             <li class="flex">
                                 <span class="w-[40%]"><img class="w-[30%]"
                                         src='<?php echo URLROOT . "/public/images/logo-linkedin.png"; ?>' alt=""></span>
                                 <span><a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                                        href="">Linkdin</a>
+                                        href="#">LinkedIn</a>
                                 </span>
                             </li>
                             <li class="flex">
                                 <span class="w-[40%]"><img class="w-[30%]"
                                         src='<?php echo URLROOT . "/public/images/twitter.png"; ?>' alt=""></span>
                                 <span><a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                                        href="">twitter</a>
+                                        href="#">Twitter</a>
                                 </span>
                             </li>
                         </ul>
                     </div>
 
-
-
                 </div>
             </div>
 
-
-
         </div>
-        <div class="mt-6 ml-[37%] lg:mb-0 mb-6">
-            <h5 class="text-lg mt-0 mb-2 ml-[13%] text-blueGray-600">
-                Moyens de paiement .
-            </h5>
-            <div class="flex">
 
-                <div class="w-[60px] h-[40px] mx-8   bg-white text-lightBlue-400 shadow-lg font-normal h-10 w-10 items-center
-                justify-center align-center  outline-none focus:outline-none mr-2">
+        <div class="mt-6 lg:mt-0">
+            <h5 class="text-lg mt-0 mb-2 text-blueGray-600 text-center lg:text-left">
+                Moyens de paiement
+            </h5>
+            <div class="flex justify-center lg:justify-start">
+                <div class="w-[60px] h-[40px] mx-8 bg-white text-lightBlue-400 shadow-lg font-normal h-10 w-10 items-center
+                      justify-center align-center outline-none focus:outline-none mr-2">
                     <img class="w-full" src='<?php echo URLROOT . "/public/images/Master Card.webp"; ?>' alt="">
                 </div>
-                <div class="w-[60px] h-[40px] mx-8   bg-white text-lightBlue-400 shadow-lg font-normal h-10 w-10 items-center
-                justify-center align-center  outline-none focus:outline-none mr-2">
+                <div class="w-[60px] h-[40px] mx-8 bg-white text-lightBlue-400 shadow-lg font-normal h-10 w-10 items-center
+                      justify-center align-center outline-none focus:outline-none mr-2">
                     <img class="w-full" src='<?php echo URLROOT . "/public/images/Diners.webp"; ?>' alt="">
                 </div>
-                <div class="w-[60px] h-[40px] mx-8    bg-white text-lightBlue-400 shadow-lg font-normal h-10 w-10 items-center
-                justify-center align-center  outline-none focus:outline-none mr-2">
+                <div class="w-[60px] h-[40px] mx-8 bg-white text-lightBlue-400 shadow-lg font-normal h-10 w-10 items-center
+                      justify-center align-center outline-none focus:outline-none mr-2">
                     <img class="w-full" src='<?php echo URLROOT . "/public/images/Discover.webp"; ?>' alt="">
                 </div>
-                <div class="w-[60px] h-[40px] mx-8    bg-white text-lightBlue-400 shadow-lg font-normal h-10 w-10 items-center
-                justify-center align-center  outline-none focus:outline-none mr-2">
+                <div class="w-[60px] h-[40px] mx-8 bg-white text-lightBlue-400 shadow-lg font-normal h-10 w-10 items-center
+                      justify-center align-center outline-none focus:outline-none mr-2">
                     <img class="w-full" src='<?php echo URLROOT . "/public/images/Visa.webp"; ?>' alt="">
                 </div>
             </div>
         </div>
+
         <hr class="my-6 border-blueGray-300">
+
         <div class="flex flex-wrap items-center md:justify-between justify-center">
             <div class="w-full md:w-4/12 px-4 mx-auto text-center">
                 <div class="text-sm text-blueGray-500 font-semibold py-1">

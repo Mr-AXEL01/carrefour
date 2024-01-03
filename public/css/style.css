@@ -1,0 +1,8 @@
+/* hidden scroll bare form home */
+#categorie::-webkit-scrollbar {
+    display: none;
+  }
+
+  #marque::-webkit-scrollbar {
+    display: none;
+  }

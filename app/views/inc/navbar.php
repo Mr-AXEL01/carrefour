@@ -1,4 +1,4 @@
-<nav class="relative px-4 py-4 flex justify-between items-center bg-white">
+<nav class="h-12 relative px-4 py-4 flex justify-between items-center bg-white">
     <div class="w-[260px] h-[10%]">
         <img class="w-[50%]" src='<?php echo URLROOT . "/public/images/carrefour2.jpg"; ?>' alt="LogoCarrefour">
     </div>
