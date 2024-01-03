@@ -4,9 +4,8 @@ class Order {
     private $idOrder;
     private $idClient;
 
-    public function __construct($idOrder, $idClient) {
-        $this->idOrder  = $idOrder;
-        $this->idClient = $idClient;
+    public function __construct () {
+      
     }
 
     #getter
