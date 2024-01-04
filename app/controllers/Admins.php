@@ -22,7 +22,6 @@ class Admins extends Controller
     {
         $admin= new $this->model();
         $admin->setIdUser(uniqid(mt_rand(), true));
-        $admin->setProfil($_POST['profil']);
         $admin->setFullNAme($_POST['nom']);
         $admin->setUsername($_POST['username']);
         $admin->setEmail($_POST['email']);
@@ -40,7 +39,6 @@ class Admins extends Controller
     {
         $admin= new $this->model();
         $admin->setIdUser($_POST['idUser']);
-        $admin->setProfil($_POST['profil']);
         $admin->setFullNAme($_POST['nom']);
         $admin->setUsername($_POST['username']);
         $admin->setEmail($_POST['email']);
