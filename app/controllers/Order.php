@@ -6,7 +6,7 @@ class Order extends controller {
 
     public function __construct() {
         $this->model = $this->model('Order');
-        $this->service = $this->service('Order');
+        $this->service = $this->service('OrderService');
     }
 
     public function display () {
