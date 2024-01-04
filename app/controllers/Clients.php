@@ -1,14 +1,14 @@
 <?php 
 
-class Admins extends Controller
+class Clients extends Controller
 {
     private $model;
     private $service;
 
     public function __construct()
     {
-        $this->model = $this->model('Admin');
-        $this->service = $this->service('AdminServiceImp');
+        $this->model = $this->model('Client');
+        $this->service = $this->service('ClientServiceImp');
     }
 
     public function display()
