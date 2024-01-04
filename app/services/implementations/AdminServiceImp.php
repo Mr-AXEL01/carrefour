@@ -12,7 +12,7 @@ class AdminServiceImp implements AdminService
     public function create(Admin $admin)
     {
         $idAdmin = $admin->getIdUser();
-        // $profil = $admin->getProfil();
+        $profil = $admin->getProfil();
         $fullName = $admin->getFullNAme();
         $username = $admin->getUsername();
         $email = $admin->getEmail();
@@ -21,9 +21,9 @@ class AdminServiceImp implements AdminService
         $adress = $admin->getAdress();
 
 
-        $this->db->query('INSERT INTO user(idUser, fullName, username, email, password, phone, adress) VALUES (:idAdmin, :fullName, :username, :email, :password, :phone, :adress)');
+        $this->db->query('INSERT INTO user VALUES (:idAdmin, :profil, :fullName, :username, :email, :password, :phone, :adress)');
         $this->db->bind(':idAdmin', $idAdmin);
-        // $this->db->bind(':profil', $profil);
+        $this->db->bind(':profil', $profil);
         $this->db->bind(':fullName', $fullName);
         $this->db->bind(':username', $username);
         $this->db->bind(':email', $email);

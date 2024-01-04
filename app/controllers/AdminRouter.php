@@ -19,7 +19,7 @@ class AdminRouter extends Controller
     {
         
      
-        $this->view('admin/croducts');
+        $this->view('admin/products');
     }
     public function Users()
     {

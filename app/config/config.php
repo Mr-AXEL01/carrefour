@@ -16,4 +16,3 @@ define('APPROOT', dirname(dirname(__FILE__)));
 define('URLROOT', 'http://localhost:8001');
 
 define('SITENAME', 'Carrefour');
-    
