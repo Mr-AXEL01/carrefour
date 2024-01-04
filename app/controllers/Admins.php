@@ -11,7 +11,7 @@ class Admins extends Controller
         $this->service = $this->service('AdminServiceImp');
     }
 
-    public function read()
+    public function display()
     {
         $admin= $this->service->read();
 

@@ -1,6 +1,6 @@
 <?php
 
-interface Admin
+interface AdminService
 {
     public function create(Admin $admin);
     public function read();
