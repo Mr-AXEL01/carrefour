@@ -1,6 +1,6 @@
 <?php 
 
-class Client extends Controller
+class ClientRouter extends Controller
 {
     public function __construct()
     {
