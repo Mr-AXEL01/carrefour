@@ -11,10 +11,11 @@ $(document).ready(function () {
         $("#tbody").html("");
         let row = "";
         let element = "";
+        let span = "";
         data.forEach((e) => {
           row = $("<tr>", { class: "h-10" });
           for (const [key, value] of Object.entries(e)) {
-            element = $("<td>", { class: "border-black border-2 rounded-sm" });
+            element = $("<td>", { class: "px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left" });
             element.html(value);
             row.append(element);
           }
@@ -24,15 +25,18 @@ $(document).ready(function () {
           });
           button = $("<button>", { class: "delete-button", type: "button" });
           button.attr("data-id", `${e.idUser}`);
-          value = "DELETE";
+          value = '<img src="<?php echo URL_ROOT ?>/src/editer.png" class="h-4 sm:h-6" />';
           button.html(value);
           element.append(button);
-
+          span = $("<span>", { class: "" });
+          span.attr("data-modal-target", `crud-modal`);
+          span.attr("data-modal-toggle", `crud-modal`);
           button = $("<button>", { class: "edit-button", type: "button" });
           button.attr("data-id", `${e.idUser}`);
-          value = "EDIT";
+          value = '<img src="<?php echo URL_ROOT ?>/src/editer.png" class="h-4 sm:h-6" />';
           button.html(value);
-          element.append(button);
+          span.html(button);
+          element.append(span);
 
           row.append(element);
 
@@ -81,16 +85,17 @@ $(document).ready(function () {
       type: "GET",
       success: function (response) {
         let data = JSON.parse(response);
-        $("#submit").val("EDIT");
+        $("#submit").html("EDIT");
+        console.log(data);
 
-        $("#id").val("");
-        $("#name").val("");
-        $("#username").val("");
-        $("#email").val("");
-        $("#password").val("");
-        $("#phone").val("");
-        $("#adress").val("");
-        $("#logo").val("");
+        $("#id").val(data.idUser);
+        $("#name").val(data.fullName);
+        $("#username").val(data.username);
+        $("#email").val(data.email);
+        $("#password").val(data.password);
+        $("#phone").val(data.phone);
+        $("#adress").val(data.adress);
+        
       },
     });
   });

@@ -43,7 +43,7 @@ class Admins extends Controller
         $admin = new $this->model();
         $admin->setIdUser(uniqid(mt_rand(), true));
         $admin->setProfil(strtolower($logo));
-        $admin->setFullNAme($_POST['nom']);
+        $admin->setFullNAme($_POST['name']);
         $admin->setUsername($_POST['username']);
         $admin->setEmail($_POST['email']);
         $admin->setPassword($_POST['password']);
