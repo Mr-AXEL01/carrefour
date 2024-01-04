@@ -1,6 +1,6 @@
 <?php
 
-class Customer extends User {
+class Client extends User {
 
     public function __construct ()
     {
