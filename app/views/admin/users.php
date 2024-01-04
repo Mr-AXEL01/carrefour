@@ -7,11 +7,11 @@
         <div class="rounded-t mb-0 px-4 py-3 border-0 bg-[#0077b6] ">
             <div class="flex flex-wrap items-center text-white ">
                 <div class="relative  w-full px-4 max-w-full flex-grow flex-1">
-                    <h3 class="font-semibold text-base text-blueGray-700">Utilisateurs</h3>
+                    <h3 class="font-semibold text-base text-blueGray-700">Utilisateur</h3>
                 </div>
                 <div class="relative w-full px-4 max-w-full flex-grow flex-1 text-right">
                     <span data-modal-target="crud-modal" data-modal-toggle="crud-modal">
-                        <a href="#"
+                        <a href="#" id="add-button"
                             class="bg-[#03045e] hover:bg-[#c1121f] text-white active:bg-indigo-600 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                             type="button">Ajouter</a>
                     </span>
@@ -62,6 +62,9 @@
 
                     </tr>
                 </thead>
+                <tbody id="tbody">
+
+                </tbody>
 
 
 
@@ -98,12 +101,12 @@
                 </button>
             </div>
 
-            <form action="<?= URLROOT ?>" method="POST" class="p-4 md:p-5">
+            <form id="form" action="" method="POST" class="p-4 md:p-5" enctype="multipart/form-data">
                 <div class="grid gap-4 mb-4 grid-cols-2">
                 
                     <div class="col-span-2">
                         <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nom Complet</label>
-                        <input type="text" name="Product" id="Product"
+                        <input type="text" name="nom" id="nom"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
                     </div>
                     <div class="col-span-2">
@@ -127,13 +130,13 @@
                     <div class="col-span-2">
                         <label for="name"
                             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Phone</label>
-                        <input type="Phone" name="Phone" id="Phone"
+                        <input type="Phone" name="phone" id="phone"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
                     </div>
                     <div class="col-span-2">
                         <label for="name"
                             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Adress</label>
-                        <input type="text" name="Adress" id="Adress"
+                        <input type="text" name="adress" id="adress"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
                     </div>
                     
@@ -155,12 +158,12 @@
                                     here <br /> or <a href="" id="" class="text-blue-600 hover:underline">select a
                                         file</a> from your computer</p>
                             </div>
-                            <input name="logo" type="file" class="hidden">
+                            <input name="logo" id="logo" type="file" class="hidden">
                         </label>
                     </div>
 
 
-                    <button type="submit" name="submit"
+                    <button type="submit" name="submit" id="submit"
                         class=" bg-[#03045e] hover:bg-[#c1121f] text-white inline-flex items-center  focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-[110px]">
                         <svg class="me-1 -ms-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
                             xmlns="http://www.w3.org/2000/svg">
@@ -168,13 +171,13 @@
                                 d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z"
                                 clip-rule="evenodd"></path>
                         </svg>
-                        Ajouter
+                        SUBMIT
                     </button>
             </form>
         </div>
     </div>
 </div>
 
-
-
+<script src="<?php echo URLROOT; ?>/js/admin.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+
