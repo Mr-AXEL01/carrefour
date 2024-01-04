@@ -17,11 +17,24 @@ class Core
 
         // Name of controller is always an uppercase file
         $controller = ucwords($url[0]);
-        if (file_exists("../app/controllers/$controller.php")) {
-            $this->currentController = $controller;
-            unset($url[0]);
+        if($controller == "Admin" || $controller == "Client") {
+            $controller = $controller . "Router";
+            if (file_exists("../app/controllers/$controller.php")) {
+                $this->currentController = $controller;
+                unset($url[0]);
+            } else {
+                $url[1] = $url[0];
+            }
+
         } else {
-            $url[1] = $url[0];
+
+            if (file_exists("../app/controllers/$controller.php")) {
+                $this->currentController = $controller;
+                unset($url[0]);
+            } else {
+                $url[1] = $url[0];
+            }
+
         }
 
         require_once "../app/controllers/{$this->currentController}.php";

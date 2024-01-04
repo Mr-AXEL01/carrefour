@@ -1,5 +1,6 @@
 <?php
 
+//
 $config = parse_ini_file('config.ini');
 
 // DB Params
@@ -12,10 +13,6 @@ define('DB_NAME', 'carrefour');
 define('APPROOT', dirname(dirname(__FILE__)));
 
 // URL Root
-define('URLROOT', 'http://localhost/carrefour');
+define('URLROOT', 'http://localhost:8001');
 
-// Site Name
 define('SITENAME', 'Carrefour');
-
-// App Version
-define('APPVERSION', '1.0.0');

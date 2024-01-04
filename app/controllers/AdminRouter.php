@@ -1,6 +1,6 @@
 <?php 
 
-class Admin extends Controller
+class AdminRouter extends Controller
 {
     private $db;
      
@@ -13,31 +13,31 @@ class Admin extends Controller
     public function Categories()
     {
       
-        $this->view('admin/Categories');
+        $this->view('admin/categories');
     }
     public function Products()
     {
         
      
-        $this->view('admin/Products');
+        $this->view('admin/croducts');
     }
     public function Users()
     {
         
         
      
-        $this->view('admin/Users');
+        $this->view('admin/users');
     }
     public function Orders()
     {
         
      
-        $this->view('admin/Orders');
+        $this->view('admin/orders');
     }
     public function Bills()
     {
         
      
-        $this->view('admin/Bills');
+        $this->view('admin/bills');
     }
 }
