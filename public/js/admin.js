@@ -23,13 +23,13 @@ $(document).ready(function () {
               "h-10 border-black border-2 flex justify-evenly items-center rounded-sm",
           });
           button = $("<button>", { class: "delete-button", type: "button" });
-          button.attr("data-id", `${e.id}`);
+          button.attr("data-id", `${e.idUser}`);
           value = "DELETE";
           button.html(value);
           element.append(button);
 
           button = $("<button>", { class: "edit-button", type: "button" });
-          button.attr("data-id", `${e.idProduct}`);
+          button.attr("data-id", `${e.idUser}`);
           value = "EDIT";
           button.html(value);
           element.append(button);
@@ -51,7 +51,7 @@ $(document).ready(function () {
   $(document).on("submit", "#form", function (e) {
     e.preventDefault();
     let formData = new FormData(this);
-    if ($("#submit").val() == "SUBMIT") {
+        console.log(formData);
       $.ajax({
         url: URLROOT + "/admins/add",
         type: "POST",
@@ -69,23 +69,9 @@ $(document).ready(function () {
           $("#password").val("");
           $("#phone").val("");
           $("#adress").val("");
-          $("#phone").val("");
           $("#logo").val("");
         },
       });
-    } else {
-      $.ajax({
-        url: URLROOT + "/admins/edit",
-        type: "POST",
-        data: formData,
-        contentType: false,
-        cache: false,
-        processData: false,
-        success: function (response) {
-          draw();
-        },
-      });
-    }
   });
 
   $(document).on("click", ".edit-button", function () {
@@ -104,7 +90,6 @@ $(document).ready(function () {
         $("#password").val("");
         $("#phone").val("");
         $("#adress").val("");
-        $("#phone").val("");
         $("#logo").val("");
       },
     });
