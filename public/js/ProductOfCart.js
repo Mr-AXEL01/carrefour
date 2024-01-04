@@ -23,13 +23,13 @@ $(document).ready(function(){
                     }
                     element = $("<td>", {class: "h-10 border-black border-2 flex justify-evenly items-center rounded-sm"});
                     button = $("<button>", {class: "delete-button", type: "button"});
-                    button.attr('data-id', `${e.id}`);
+                    button.attr('data-idProduct', `${e.idProduct}`);
                     value = "DELETE";
                     button.html(value);
                     element.append(button);
 
                     button = $("<button>", {class: "edit-button", type: "button"});
-                    button.attr('data-id', `${e.idProduct}`);
+                    button.attr('data-idProduct', `${e.idProduct}`);
                     value = "EDIT";
                     button.html(value);
                     element.append(button);
@@ -63,9 +63,8 @@ $(document).ready(function(){
                 success: function(response){
                     draw();
 
-                    $('#id').val('');
-                    $('#name').val('');
-                    $('#address').val('');
+                    $('#idProduct').val('');
+                    $('#idCart').val('');
                 }
             });
         } else {
@@ -84,26 +83,25 @@ $(document).ready(function(){
     });
 
     $(document).on('click', '.edit-button', function(){
-        let id = $(this).data('id');
+        let idProduct = $(this).data('idProduct');
         $.ajax({
-            url: URLROOT + '/productOfCart/get/' + id,
+            url: URLROOT + '/productOfCart/get/' + idProduct,
             type: 'GET',
             success: function(response){
                 let data = JSON.parse(response);
                 $('#submit').val('EDIT');
 
-                $('#id').val(data.id);
-                $('#name').val(data.name);
-                $('#address').val(data.address);
+                $('#idProduct').val(data.idProduct);
+                $('#idCart').val(data.idCart);
 
             }
         });
     });
 
     $(document).on('click', '.delete-button', function(){
-        let id = $(this).data('id');
+        let idProduct = $(this).data('idProduct');
         $.ajax({
-            url: URLROOT + '/productOfCart/remove/' + id,
+            url: URLROOT + '/productOfCart/remove/' + idProduct,
             type: 'GET',
             success: function(response){
                 draw();
