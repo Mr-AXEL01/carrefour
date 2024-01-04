@@ -149,7 +149,7 @@
 <h1 class=" text-4xl font-extrabold sm:text-5xl my-14 pl-4">
     Vos achats en magasin</h1>
 
-<section class="container mx-auto flex flex-wrap justify-center">
+<section class=" mx-auto flex flex-wrap justify-center">
 
     <!-- Première carte -->
     <div class="w-full md:w-1/3 p-4">
@@ -191,10 +191,10 @@
 
 <!-- deuxieme section vos achats en magasin  -->
 
-<section class=" mb-4 flex flex-wrap sm:flex-nowrap   bg-blue-100">
+<section class=" mb-4 flex sm:flex-nowrap bg-blue-100">
 
     <!-- Première carte -->
-    <div class="w-[50%] md:w-1/3 py-4">
+    <div class="w-[40%] md:w-1/3 py-4">
         <div class=" flex items-center  ">
             <img class="wy-24 h-24 object-cover rounded"
                 src="<?php echo URLROOT . '/public/images/carre3-removebg-preview.png'; ?>" alt="
@@ -208,7 +208,7 @@
     </div>
 
     <!-- Deuxième carte -->
-    <div class="w-[50%] md:w-1/3 py-4">
+    <div class="w-[40%] md:w-1/3 py-4">
         <div class=" flex items-center  ">
             <img class="wy-24 h-24 object-cover rounded"
                 src="<?php echo URLROOT . '/public/images/support-removebg-preview.png'; ?>" alt="Image 2">
@@ -221,7 +221,7 @@
     </div>
 
     <!-- Troisième carte -->
-    <div class="w-[50%] md:w-1/3 py-4">
+    <div class="w-[40%] md:w-1/3 py-4">
         <div class=" flex items-center  ">
             <img class="wy-24 h-24 object-cover rounded"
                 src="<?php echo URLROOT . '/public/images/chat-removebg-preview.png'; ?>" alt="Image 3">
@@ -235,7 +235,7 @@
 
     <!-- quatrieme carte -->
 
-    <div class="w-[50%] md:w-1/3 py-4">
+    <div class="w-[40%] md:w-1/3 py-4">
         <div class=" flex items-center  ">
             <img class="wy-24 h-24 object-cover rounded"
                 src="<?php echo URLROOT . '/public/images/message-removebg-preview.png'; ?>" alt="Image 3">

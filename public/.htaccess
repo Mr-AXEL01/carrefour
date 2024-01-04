@@ -1,8 +1,17 @@
 <IfModule mod_rewrite.c>
   Options -Multiviews
+<<<<<<< HEAD
   RewriteEngine On
   RewriteBase /carrefour/public
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteRule  ^(.+)$ index.php?url=$1 [QSA,L]
 </IfModule>   
+=======
+  RewriteEngine On 
+  RewriteBase /carrefour/public 
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !-f 
+  RewriteRule  ^(.+)$ index.php?url=$1 [QSA,L]
+</IfModule>
+>>>>>>> 36de1a8d431b2647930faa3ab7cbac75cabe428f

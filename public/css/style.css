@@ -4,9 +4,9 @@
     display: none;
   }
 
-* {
+/* * {
     font-family: 'Rubik', sans-serif;
-}
+} */
   #marque::-webkit-scrollbar {
     display: none;
   }.login-button {
