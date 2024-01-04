@@ -30,7 +30,7 @@ $(document).ready(function() {
                     element.appendTo(button);
 
                     button = $("<button>", {class: "edit-button", type: "button"});
-                    button.attr('data-id', `${e.id}`);
+                    button.attr('data-id', `${e.idProduct}`);
                     value = "EDIT";
                     button.html(value);
                     element.append(button);
@@ -45,5 +45,43 @@ $(document).ready(function() {
     }
 
     draw();
+
+    $(document).on('click', '#add-button', function(){
+        $('#submit').val('SUBMIT');
+    });
+
+    $(document).on('submit', '#form', function(e) {
+        e.preventDefault();
+        let formData = new FormData(this);
+        if($("#submit").val() == 'SUBMIT') {
+            $.ajax({
+                url: URLROOT + '/productOfCart/add' ,
+                type: 'POST',
+                data: formData,
+                contentType: false,
+                cache: false,
+                processData: false,
+                success: function(response){
+                    draw();
+
+                    $('#idProduct').val('');
+                    $('#idCart').val('');
+                }
+            });
+        } else {
+            $.ajax({
+                url: URLROOT + '/productOfCart/edit' ,
+                type: 'POST',
+                data: formData,
+                contentType: false,
+                cache: false,
+                processData: false,
+                success: function(response) {
+                    draw();
+                }
+            });
+        }
+    });
+
     
 });
