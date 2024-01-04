@@ -1,7 +1,3 @@
-
-
-
-
 <?php
 
 interface BillService
