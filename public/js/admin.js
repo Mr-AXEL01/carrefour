@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  const URLROOT = "http://localhost:8001";
+  const URLROOT = "http://localhost/carrefour";
 
   function draw() {
     $.ajax({
