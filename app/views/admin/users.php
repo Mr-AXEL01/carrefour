@@ -101,7 +101,7 @@
                 </button>
             </div>
 
-            <form id="form" action="" method="POST" class="p-4 md:p-5">
+            <form id="form" action="" method="POST" class="p-4 md:p-5" enctype="multipart/form-data">
                 <div class="grid gap-4 mb-4 grid-cols-2">
                 
                     <div class="col-span-2">
@@ -171,13 +171,13 @@
                                 d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z"
                                 clip-rule="evenodd"></path>
                         </svg>
-                        Ajouter
+                        SUBMIT
                     </button>
             </form>
         </div>
     </div>
 </div>
 
-
-<Script src="<?= URLROOT ?>/js/admin.js"></Script>
+<script src="<?php echo URLROOT; ?>/js/admin.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+
