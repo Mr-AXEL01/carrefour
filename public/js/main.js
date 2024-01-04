@@ -1,5 +1,5 @@
 
-    // Burger menus for navbar
+    // ==========Burger menus for navbar=============
     document.addEventListener('DOMContentLoaded', function() {
         // open
         const burger = document.querySelectorAll('.navbar-burger');
