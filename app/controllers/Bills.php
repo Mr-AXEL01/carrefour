@@ -63,5 +63,10 @@
     {
         $this->service->delete($id);
     }
+
+    public function remove($id)
+    {
+        $this->service->delete($id);
+    }
  }
  ?>
