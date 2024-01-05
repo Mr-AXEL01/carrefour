@@ -1,4 +1,5 @@
-<?php require APPROOT . '/views/inc/sidebarAdmin.php'; ?>
+<?php 
+require APPROOT . '/views/inc/sidebarAdmin.php'; ?>
 
 
 
@@ -182,6 +183,7 @@
     </div>
 </div>
 
+<script src="<?php echo URLROOT; ?>/js/config.js"></script>
 <script src="<?php echo URLROOT; ?>/js/admin.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
 

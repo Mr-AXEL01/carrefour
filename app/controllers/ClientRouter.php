@@ -33,4 +33,8 @@ class ClientRouter extends Controller
     {
         $this->view('client/password');
     }
+
+    public function updatePassword(){
+        $this->view('client/updatePassword');
+    }
 }
