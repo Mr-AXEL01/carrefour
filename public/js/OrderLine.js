@@ -1,10 +1,14 @@
+
+
 $(document).ready(function(){
+
+    const URLROOT = "http://localhost/carrefour";
 
    
 
     function draw(){
         $.ajax({
-            url: URLROOT + '/productOfCart/display',
+            url: URLROOT + '/orderLine/display',
             type: 'GET',
             success: function(response){
                 console.log(response);
@@ -21,13 +25,13 @@ $(document).ready(function(){
                     }
                     element = $("<td>", {class: "h-10 border-black border-2 flex justify-evenly items-center rounded-sm"});
                     button = $("<button>", {class: "delete-button", type: "button"});
-                    button.attr('data-idProduct', `${e.idProduct}`);
+                    button.attr('data-idOrderLine', `${e.idOrderLine}`);
                     value = "DELETE";
                     button.html(value);
                     element.append(button);
 
                     button = $("<button>", {class: "edit-button", type: "button"});
-                    button.attr('data-idProduct', `${e.idProduct}`);
+                    button.attr('data-idOrderLine', `${e.idOrderLine}`);
                     value = "EDIT";
                     button.html(value);
                     element.append(button);
@@ -52,7 +56,7 @@ $(document).ready(function(){
         let formData = new FormData(this);
         if($("#submit").val() == 'SUBMIT'){
             $.ajax({
-                url: URLROOT + '/productOfCart/add',
+                url: URLROOT + '/orderLine/add',
                 type: 'POST',
                 data: formData,
                 contentType: false,
@@ -61,13 +65,16 @@ $(document).ready(function(){
                 success: function(response){
                     draw();
 
+                    $('#idOrderLine').val('');
+                    $('#qty').val('');
                     $('#idProduct').val('');
-                    $('#idCart').val('');
+                    $('#idBill').val('');
+                    $('#idOrder').val('');
                 }
             });
         } else {
             $.ajax({
-                url: URLROOT + '/productOfCart/edit',
+                url: URLROOT + '/orderLine/edit',
                 type: 'POST',
                 data: formData,
                 contentType: false,
@@ -81,25 +88,26 @@ $(document).ready(function(){
     });
 
     $(document).on('click', '.edit-button', function(){
-        let idProduct = $(this).data('idProduct');
+        let idOrderLine = $(this).data('idOrderLine');
         $.ajax({
-            url: URLROOT + '/productOfCart/get/' + idProduct,
+            url: URLROOT + '/orderLine/get/' + idOrderLine,
             type: 'GET',
             success: function(response){
                 let data = JSON.parse(response);
                 $('#submit').val('EDIT');
-
+                $('#idOrderLine').val(data.idOrderLine);
+                $('#qty').val(data.qty);
                 $('#idProduct').val(data.idProduct);
-                $('#idCart').val(data.idCart);
-
+                $('#idBill').val(data.idBill);
+                $('#idOrder').val(data.idOrder);
             }
         });
     });
 
     $(document).on('click', '.delete-button', function(){
-        let idProduct = $(this).data('idProduct');
+        let idOrderLine = $(this).data('idOrderLine');
         $.ajax({
-            url: URLROOT + '/productOfCart/remove/' + idProduct,
+            url: URLROOT + '/orderLine/remove/' + idOrderLine,
             type: 'GET',
             success: function(response){
                 draw();
