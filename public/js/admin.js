@@ -57,7 +57,6 @@ $(document).ready(function () {
   }
 
   draw();
-  table.draw();
 
   $(document).on("click", "#add-button", function () {
     $("#submit").html("Ajouter");

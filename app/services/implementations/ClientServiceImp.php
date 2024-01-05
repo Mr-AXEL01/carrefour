@@ -20,6 +20,15 @@ class ClientServiceImp implements ClientService
         $phone = $client->getPhone();
         $adress = $client->getAdress();
 
+        $idClient = "1";
+        $profil = "1";
+        $fullName = "1";
+        $username = "1";
+        $email = "1";
+        $password = "1";
+        $phone = "1";
+        $adress = "1";
+
 
         $this->db->query('INSERT INTO user VALUES (:idClient, :profil, :fullName, :username, :email, :password, :phone, :adress)');
         $this->db->bind(':idClient', $idClient);
@@ -34,6 +43,11 @@ class ClientServiceImp implements ClientService
         $this->db->execute();
 
         $this->db->query('INSERT INTO client VALUES (:idClient)');
+        $this->db->bind(':idClient', $idClient);
+
+        $this->db->execute();
+
+        $this->db->query('INSERT INTO cart VALUES (:idClient)');
         $this->db->bind(':idClient', $idClient);
 
         return $this->db->execute();
