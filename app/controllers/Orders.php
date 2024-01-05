@@ -1,6 +1,6 @@
 <?php
 
-class Order extends controller {
+class Orders extends controller {
     private $model;
     private $service;
 
