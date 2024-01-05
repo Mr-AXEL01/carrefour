@@ -46,4 +46,8 @@ class ClientRouter extends Controller
     {
         $this->view('client/password');
     }
+    public function invoice()
+    {
+        $this->view('client/invoice');
+    }
 }

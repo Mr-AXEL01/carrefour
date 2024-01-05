@@ -26,7 +26,7 @@
                     <div class="flex items-center m-10 flex flex-col justify-end p-2 ml-4">
                         <h1 class="text-xl font-bold">$19.88</h1>
                         <div class="flex items-center m-2">
-                        <button class="flex items-center mt-4 justify-center bg-red-500 hover:bg-red-600 text-blacks font-bold py-2 px-4 rounded">
+                        <button class="flex items-center mt-4'r justify-center bg-red-500 hover:bg-red-600 text-blacks font-bold py-2 px-4 rounded">
   <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
     <path fill-rule="evenodd" d="M14.293 5.293a1 1 0 011.414 1.414L11.414 11l4.293 4.293a1 1 0 01-1.414 1.414L10 12.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 11 4.293 6.707a1 1 0 011.414-1.414L10 8.586l4.293-4.293a1 1 0 011.414 0z" clip-rule="evenodd" />
   </svg>
