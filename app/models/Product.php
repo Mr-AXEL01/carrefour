@@ -8,7 +8,7 @@ class Product
     private $name;
     private $qty;
     private $price;
-    private $idClient;
+    private $idCategory;
 
     public function __construct()
     {
@@ -32,7 +32,7 @@ class Product
     }
     public function setpicture($picture)
     {
-        $this->name = $picture;
+        $this->picture = $picture;
     }
     //get and set name
 
@@ -64,29 +64,12 @@ class Product
         $this->price = $price;
     }
     //get and set idClient
-    public function getidClient()
+    public function getIdCategory()
     {
-        return $this->idClient;
+        return $this->idCategory;
     }
-    public function setidClient($idClient)
+    public function setidCategory($idCategory)
     {
-        $this->idClient = $idClient;
+        $this->idCategory = $idCategory;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

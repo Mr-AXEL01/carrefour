@@ -11,7 +11,7 @@ class Products extends Controller
         $this->service = $this->service('ProductServiceImp');
     }
 
-    public function read()
+    public function display()
     {
         $product= $this->service->read();
 
@@ -20,14 +20,33 @@ class Products extends Controller
 
     public function add()
     {
-        $product= new $this->model();
+
+        $valid_extensions = array('jpeg', 'jpg', 'png');
+        $path = APPROOT . "/../public/uploads/";
+
+        $img = $_FILES['picture']['name'];
+        $tmp = $_FILES['picture']['tmp_name'];
+
+        $ext = strtolower(pathinfo($img, PATHINFO_EXTENSION));
+
+        $logo = rand(1000,1000000).$img;
+
+        if(in_array($ext, $valid_extensions)) { 
+            $path = $path.strtolower($logo); 
+            if(move_uploaded_file($tmp,$path)) {
+                echo "Upload Failed";
+            } else {
+                echo "Upload Successful";
+            }
+        }
+        
+        $product= new $this->model();   
         $product->setidProduct(uniqid(mt_rand(), true));
-        $product->setpicture($_POST['picture']);
+        $product->setPicture(strtolower($logo));
         $product->setname($_POST['name']);
         $product->setqty($_POST['qty']);
         $product->setprice($_POST['price']);
-        $product->setprice($_POST['price']);
-        $product->setidClient($_POST['idClient']);
+        $product->setidCategory($_POST['idCategory']);
 
 
 
@@ -39,12 +58,11 @@ class Products extends Controller
     {
         $product= new $this->model();
         $product->setidCategory($_POST['idCategory']);
-        $product->setpicture($_POST['picture']);
+        $product->setPicture($_POST['picture']);
         $product->setname($_POST['name']);
         $product->setqty($_POST['qty']);
         $product->setprice($_POST['price']);
-        $product->setprice($_POST['price']);
-        $product->setidClient($_POST['idClient']);
+        $product->setidCategory($_POST['idCategory']);
 
         $this->service->update($product);
     }
