@@ -16,16 +16,16 @@ class ProductServiceImp implements ProductService
         $picture = $product->getpicture();
         $qty = $product->getqty();
         $price = $product->getprice();
-        $idClient = $product->getidClient();
+        $idCategory = $product->getIdCategory();
 
 
-        $this->db->query('INSERT INTO product VALUES (:idProduct, :name, :picture,:qty,:price,:idClient)');
+        $this->db->query('INSERT INTO product VALUES (:idProduct,:picture, :name,:qty,:price,:idCategory)');
         $this->db->bind(':idProduct', $idProduct);
         $this->db->bind(':name', $name);
         $this->db->bind(':picture', $picture);
         $this->db->bind(':qty', $qty);
         $this->db->bind(':price', $price);
-        $this->db->bind(':idClient', $idClient);
+        $this->db->bind(':idCategory', $idCategory);
 
 
 
@@ -48,15 +48,15 @@ class ProductServiceImp implements ProductService
         $picture = $product->getpicture();
         $qty = $product->getqty();
         $price = $product->getprice();
-        $idClient = $product->getidClient();
+        $idCategory = $product->getIdCategory();
 
-        $this->db->query('UPDATE product SET name = :name, picture = :picture, qty = :qty, price = :price , idClient = :idClient  WHERE idProduct = :idProduct');
+        $this->db->query('UPDATE product SET name = :name, picture = :picture, qty = :qty, price = :price , idCategory = :idCategory  WHERE idProduct = :idProduct');
         $this->db->bind(':idProduct', $idProduct);
         $this->db->bind(':name', $name);
         $this->db->bind(':picture', $picture);
         $this->db->bind(':qty', $qty);
         $this->db->bind(':price', $price);
-        $this->db->bind(':idClient', $idClient);
+        $this->db->bind(':idCategory', $idCategory);
 
         return $this->db->execute();
     }

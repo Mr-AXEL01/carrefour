@@ -13,7 +13,7 @@
                     <span data-modal-target="crud-modal" data-modal-toggle="crud-modal">
                         <a href="#"
                             class="bg-[#03045e] hover:bg-[#c1121f] text-white active:bg-indigo-600 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                            type="button">Ajouter</a>
+                            id="add-button" type="button">Ajouter</a>
                     </span>
                 </div>
             </div>
@@ -43,6 +43,11 @@
                             class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
                             Prix
                         </th>
+
+                        <th
+                            class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                            Category
+                        </th>
                         <th
                             class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
                             Actions
@@ -50,6 +55,10 @@
 
                     </tr>
                 </thead>
+
+                <tbody id="tbody">
+
+                </tbody>
 
 
 
@@ -86,26 +95,33 @@
                 </button>
             </div>
 
-            <form action="<?= URLROOT ?>" method="POST" class="p-4 md:p-5">
+            <form action="" id="form" method="POST" class="p-4 md:p-5">
                 <div class="grid gap-4 mb-4 grid-cols-2">
 
                     <div class="col-span-2">
                         <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nom de
                             Product</label>
-                        <input type="text" name="Product" id="Product"
+                        <input type="text" name="name" id="name"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
                     </div>
                     <div class="col-span-2">
                         <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                             Quantité</label>
-                        <input type="text" name="Product" id="Product"
+                        <input type="text" name="qty" id="qty"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
                     </div>
                     <div class="col-span-2">
                         <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Prix
                             MAD</label>
-                        <input type="number" name="prix" id="prix"
+                        <input type="number" name="price" id="price"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
+                    </div>
+                    <div>
+                        <label class="text-white dark:text-gray-200" for="passwordConfirmation">Select</label>
+                        <select id="idCategory" name="idCategory"
+                            class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring">
+
+                        </select>
                     </div>
                     <div class="col-span-2">
                         <label for="logo"
@@ -124,13 +140,14 @@
                                     here <br /> or <a href="" id="" class="text-blue-600 hover:underline">select a
                                         file</a> from your computer</p>
                             </div>
-                            <input name="logo" type="file" class="hidden">
+                            <input id="picture" name="picture" type="file" class="hidden">
                         </label>
                     </div>
 
 
-                    <button type="submit" name="submit"
-                        class=" bg-[#03045e] hover:bg-[#c1121f] text-white inline-flex items-center  focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-[110px]">
+                    <button type="submit" name="submit" id="submit" class=" bg-[#03045e] hover:bg-[#c1121f] text-white inline-flex items-center focus:ring-4
+                        focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center
+                        dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-[110px]">
                         <svg class="me-1 -ms-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
                             xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd"
@@ -145,5 +162,5 @@
 </div>
 
 
-
+<script src="<?php echo URLROOT; ?>/js/products.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
