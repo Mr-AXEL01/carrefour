@@ -2,7 +2,7 @@
 
 
 
-<div class="w-full xl:w-10/12 mb-12 mb-[400px] px-4 mx-auto ">
+<div class="w-full xl:w-10/12   px-4 mx-auto ">
     <div class="relative flex flex-col min-w-0 break-words  w-full mb-6 shadow-lg rounded ">
         <div class="rounded-t mb-0 px-4 py-3 border-0 bg-[#0077b6] ">
             <div class="flex flex-wrap items-center text-white ">
@@ -11,11 +11,11 @@
                 </div>
                 <div class="relative w-full px-4 max-w-full flex-grow flex-1 text-right">
                     <span data-modal-target="crud-modal" data-modal-toggle="crud-modal">
-                        <a href="#"
+                        <a href="#" id="add-button"
                             class="bg-[#03045e] hover:bg-[#c1121f] text-white active:bg-indigo-600 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                             type="button">Ajouter</a>
                     </span>
-                </div>  
+                </div>
             </div>
         </div>
 
@@ -41,16 +41,16 @@
                         </th>
                         <th
                             class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
-                            Actions 
+                            Actions
                         </th>
 
                     </tr>
                 </thead>
-<tbody>
+                <tbody id="tbody">
 
 
 
-</tbody>
+                </tbody>
             </table>
         </div>
     </div>
@@ -84,12 +84,12 @@
                 </button>
             </div>
 
-            <form action="" method="POST" class="p-4 md:p-5">
+            <form id="form" action="" method="POST" class="p-4 md:p-5">
                 <div class="grid gap-4 mb-4 grid-cols-2">
                     <div class="col-span-2">
                         <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nom de
                             categorie</label>
-                        <input type="text" name="categorie" id="categorie"
+                        <input type="text" name="name" id="name"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
                     </div>
                     <div class="col-span-2">
@@ -98,30 +98,28 @@
                         <input type="text" name="description" id="description"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
                     </div>
+                    <input type="hidden" name="id" id="id" value="">
                     <div class="col-span-2">
                         <label for="logo"
                             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Picture</label>
 
                         <label
                             class="flex flex-col rounded-lg border-4 border-dashed w-full h-60 p-10 group text-center">
-                            <div
-                                class="h-full w-full text-center flex flex-col items-center justify-center    ">
+                            <div class="h-full w-full text-center flex flex-col items-center justify-center    ">
 
                                 <div class="flex flex-auto max-h-48 w-2/5 mx-auto -mt-10">
-                                    <img class="has-mask h-36 object-center"
-                                        src="<?= URLROOT ?>/src/form.png"
-                                        alt=" ">
+                                    <img class="has-mask h-36 object-center" src="<?= URLROOT ?>/src/form.png" alt=" ">
                                 </div>
                                 <p class="pointer-none text-gray-500 "><span class="text-sm">Drag and drop</span> files
                                     here <br /> or <a href="" id="" class="text-blue-600 hover:underline">select a
                                         file</a> from your computer</p>
                             </div>
-                            <input name="logo" id="logo" type="file" class="hidden">
+                            <input name="picture" id="picture" type="file" class="hidden">
                         </label>
                     </div>
 
 
-                    <button type="submit" name="submit"
+                    <button type="submit" name="submit" id="submit"
                         class=" bg-[#03045e] hover:bg-[#c1121f] text-white inline-flex items-center  focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-[110px]">
                         <svg class="me-1 -ms-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
                             xmlns="http://www.w3.org/2000/svg">
@@ -137,5 +135,6 @@
 </div>
 
 
+<script src="<?php echo URLROOT; ?>/js/category.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>

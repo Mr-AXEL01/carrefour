@@ -14,17 +14,28 @@ $(document).ready(function () {
         data.forEach((e) => {
           row = $("<tr>", { class: "h-10" });
           for (const [key, value] of Object.entries(e)) {
-            element = $("<td>", { class: "px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left" });
+            if(key != 'password'){
+                if(key=== 'profil'){
+
+                    element = $("<td>", { class: "px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left" });
+                    element.html(`<img class="h-[100px] w-[100px]" src="${URLROOT}/uploads/${value}">`);
+                    row.append(element);
+                }else{
+                  element = $("<td>", { class: "px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left" });
             element.html(value);
-            row.append(element);
-          }
+            row.append(element);  
+                }
+
+            
+            
+          }}
           element = $("<td>", {
             class:
-              "h-10 border-black border-2 flex justify-evenly items-center rounded-sm",
+              " h-full flex justify-evenly items-center rounded-sm",
           });
           button = $("<button>", { class: "delete-button", type: "button" });
           button.attr("data-id", `${e.idUser}`);
-          value = '<img src="<?php echo URLROOT ?>/src/editer.png" class="h-4 sm:h-6" />';
+          value = `<img src="${URLROOT}/src/supprimer.png" class="h-4 sm:h-6 mt-10  " />`;
           button.html(value);
           element.append(button);
           span = $("<span>", { class: "" });
@@ -32,7 +43,7 @@ $(document).ready(function () {
           span.attr("data-modal-toggle", `crud-modal`);
           button = $("<button>", { class: "edit-button", type: "button" });
           button.attr("data-id", `${e.idUser}`);
-          value = '<img src="<?php echo URLROOT ?>/src/editer.png" class="h-4 sm:h-6" />';
+          value = `<img src="${URLROOT}/src/editer.png" class="h-4 sm:h-6 mt-10 " />`;
           button.html(value);
           span.html(button);
           element.append(span);
@@ -46,9 +57,18 @@ $(document).ready(function () {
   }
 
   draw();
+  table.draw();
 
   $(document).on("click", "#add-button", function () {
-    $("#submit").val("SUBMIT");
+    $("#submit").html("Ajouter");
+    $("#id").val("");
+    $("#name").val("");
+    $("#username").val("");
+    $("#email").val("");
+    // $("#password").val("");
+    $("#phone").val("");
+    $("#adress").val("");
+    $("#logo").val("");
   });
 
   $(document).on("submit", "#form", function (e) {
@@ -65,14 +85,7 @@ $(document).ready(function () {
         success: function (response) {
           draw();
 
-          $("#id").val("");
-          $("#name").val("");
-          $("#username").val("");
-          $("#email").val("");
-          $("#password").val("");
-          $("#phone").val("");
-          $("#adress").val("");
-          $("#logo").val("");
+         
         },
       });
   });
@@ -84,14 +97,14 @@ $(document).ready(function () {
       type: "GET",
       success: function (response) {
         let data = JSON.parse(response);
-        $("#submit").html("EDIT");
+        $("#submit").html("Update");
         console.log(data);
 
         $("#id").val(data.idUser);
         $("#name").val(data.fullName);
         $("#username").val(data.username);
         $("#email").val(data.email);
-        $("#password").val(data.password);
+        // $("#password").val(data.password);
         $("#phone").val(data.phone);
         $("#adress").val(data.adress);
         

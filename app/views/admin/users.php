@@ -3,7 +3,7 @@ require APPROOT . '/views/inc/sidebarAdmin.php'; ?>
 
 
 
-<div class="w-full xl:w-10/12 mb-12 mb-[400px] px-4 mx-auto ">
+<div class="w-full xl:w-10/12   px-4 mx-auto ">
     <div class="relative flex flex-col min-w-0 break-words  w-full mb-6 shadow-lg rounded ">
         <div class="rounded-t mb-0 px-4 py-3 border-0 bg-[#0077b6] ">
             <div class="flex flex-wrap items-center text-white ">
@@ -21,7 +21,7 @@ require APPROOT . '/views/inc/sidebarAdmin.php'; ?>
         </div>
 
         <div class="block w-full overflow-x-auto font-bold text-black">
-            <table class="items-center bg-transparent w-full border-collapse ">
+            <table   class="items-center bg-transparent w-full border-collapse ">
                 <thead>
                     <tr>
                         <th
@@ -44,10 +44,10 @@ require APPROOT . '/views/inc/sidebarAdmin.php'; ?>
                             class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
                             Email 
                         </th>
-                        <th
+                        <!-- <th
                             class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
                             Password 
-                        </th>
+                        </th> -->
                         <th
                             class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
                             Phone 
@@ -90,15 +90,16 @@ require APPROOT . '/views/inc/sidebarAdmin.php'; ?>
                 <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
                     Ajouter un utilisateur
                 </h3>
-                <button type="button"
+                <button type="button" id="add-button"
                     class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
                     data-modal-toggle="crud-modal">
+                   
+                    <span class="sr-only">Close modal</span>
                     <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                         viewBox="0 0 14 14">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
                     </svg>
-                    <span class="sr-only">Close modal</span>
                 </button>
             </div>
 
@@ -175,13 +176,13 @@ require APPROOT . '/views/inc/sidebarAdmin.php'; ?>
                                 d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z"
                                 clip-rule="evenodd"></path>
                         </svg>
-                        SUBMIT
+                       Ajouter
                     </button>
             </form>
         </div>
     </div>
 </div>
-
+ 
 <script src="<?php echo URLROOT; ?>/js/config.js"></script>
 <script src="<?php echo URLROOT; ?>/js/admin.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>

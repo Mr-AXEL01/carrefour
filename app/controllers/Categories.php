@@ -20,12 +20,31 @@ class Categories extends Controller
 
     public function add()
     {
+        $valid_extensions = array('jpeg', 'jpg', 'png');
+        $path = APPROOT . "/../public/uploads/";
+
+        $img = $_FILES['picture']['name'];
+        $tmp = $_FILES['picture']['tmp_name'];
+
+        $ext = strtolower(pathinfo($img, PATHINFO_EXTENSION));
+
+        $logo = rand(1000,1000000).$img;
+
+        if(in_array($ext, $valid_extensions)) { 
+            $path = $path.strtolower($logo); 
+            if(move_uploaded_file($tmp,$path)) {
+                echo "Upload Failed";
+            } else {
+                echo "Upload Successful";
+            }
+        }
         $category= new $this->model();
         $category->setidCategory(uniqid(mt_rand(), true));
+       
+        $category->setPicture(strtolower($logo));
         $category->setname($_POST['name']);
         $category->setdescription($_POST['description']);
-        $category->setpicture($_POST['picture']);
-
+       
 
         $this->service->create($category);
     }
