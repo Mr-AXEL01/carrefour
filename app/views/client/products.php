@@ -1,12 +1,14 @@
 <?php require APPROOT . '/views/inc/header.php'; ?>
 
+<?php //var_dump($data) ?>
+
 <main>
     <section class="mt-5">
         <div class="container flex justify-between">
             <div class="flex flex-wrap space-x-4 mb-4">
                 <?php
-                foreach ($categories as $category) {
-                    echo '<button class="bg-green-700 text-white px-3 py-1 rounded hover:text-black hover:bg-green-500">' . $category . '</button>';
+                foreach ($data['categories'] as $category) {
+                    echo '<button class="bg-green-700 text-white px-3 py-1 rounded hover:text-black hover:bg-green-500">' . $category->name . '</button>';
                 }
                 ?>
             </div>
@@ -17,20 +19,19 @@
     </section>
     <section class="products-by-category">
         <?php
-        foreach ($productsByCategory as $category => $products) {
+        foreach ($data['products'] as $product) {
             echo '<div class="mb-4">';
-            echo '<h2 class="text-xl font-bold">' . $category . '</h2>';
+            echo '<h2 class="text-xl font-bold">' . $category->name . '</h2>';
             echo '<div class="flex flex-wrap space-x-4">';
-            foreach ($products as $product) {
                 echo '<div class="bg-white p-4 rounded-md shadow-md">';
-                echo '<img src="' . $product['image_url'] . '" alt="' . $product['name'] . '" class="mb-2 rounded-md">';
+                echo '<img src="' . $product->picture. '" alt="' . $product->name. '" class="mb-2 rounded-md">';
                 echo '<div class="bg-blue-700 text-white px-4 py-2 rounded-md mb-2">';
-                echo 'Price: $' . $product['price'];
+                echo 'Price: $' . $product->price;
                 echo '</div>';
-                echo '<h3 class="text-blue-700 text-lg font-semibold mb-2">' . $product['name'] . '</h3>';
+                echo '<h3 class="text-blue-700 text-lg font-semibold mb-2">' . $product->name . '</h3>';
                 echo '<button class="bg-blue-700 text-white px-4 py-2 rounded-md hover:bg-blue-500">Add to Cart</button>';
                 echo '</div>';
-            }
+            
             echo '</div>';
             echo '</div>';
         }
