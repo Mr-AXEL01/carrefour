@@ -41,7 +41,7 @@ class AdminServiceImp implements AdminService
 
     public function read()
     {
-        $sql = "SELECT * FROM user";
+        $sql = "SELECT * FROM user ";
 
         $this->db->query($sql);
         return $this->db->resultSet();

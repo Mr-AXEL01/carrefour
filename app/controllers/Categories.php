@@ -11,7 +11,7 @@ class Categories extends Controller
         $this->service = $this->service('CategoryServiceImp');
     }
 
-    public function read()
+    public function display()
     {
         $categories= $this->service->read();
 
