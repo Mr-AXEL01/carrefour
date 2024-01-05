@@ -41,3 +41,19 @@
     });
     // =================navbar-close =================
  
+    // =================cart-======================
+
+    let cartIcon = document.querySelector('.cart-icon-button');
+    let carteMenu = document.querySelector('.carte-menu');
+    let cartCloseButton = document.querySelector('.cart-close');
+    
+    cartIcon.addEventListener('click', () => {
+        // Afficher la carte-menu
+        carteMenu.classList.remove('hidden');
+    });
+    
+    cartCloseButton.addEventListener('click', () => {
+        // Cacher la carte-menu avec une transition
+        carteMenu.classList.add('hidden');
+    });
+   
