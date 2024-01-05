@@ -2,8 +2,11 @@
 
 class ClientRouter extends Controller
 {
+    private $service;
     public function __construct()
     {
+        $this->service = $this->service('CategoryServiceImp');
+
     }
 
     public function index()
@@ -14,7 +17,18 @@ class ClientRouter extends Controller
 
     public function products()
     {
-        $this->view('client/products');
+        $categories =  $this->service->read();
+
+        $this->service = $this->service('ProductServiceImp');
+        $products =  $this->service->read();
+
+
+        $data = [
+            'categories'=> $categories,
+            'products'=> $products,
+        ];
+
+        $this->view('client/products', $data);
     }
 
     public function order()
