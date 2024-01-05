@@ -1,21 +1,21 @@
 <?php 
 
-class Admins extends Controller
+class Clients extends Controller
 {
     private $model;
     private $service;
 
     public function __construct()
     {
-        $this->model = $this->model('Admin');
-        $this->service = $this->service('AdminServiceImp');
+        $this->model = $this->model('Client');
+        $this->service = $this->service('ClientServiceImp');
     }
 
     public function display()
     {
-        $admin= $this->service->read();
+        $client= $this->service->read();
 
-        echo json_encode($admin);
+        echo json_encode($client);
     }
 
     public function add()
@@ -40,17 +40,17 @@ class Admins extends Controller
             }
         }
 
-        $admin = new $this->model();
-        $admin->setIdUser(uniqid(mt_rand(), true));
-        $admin->setProfil(strtolower($logo));
-        $admin->setFullNAme($_POST['name']);
-        $admin->setUsername($_POST['username']);
-        $admin->setEmail($_POST['email']);
-        $admin->setPassword(password_hash($_POST['password'], PASSWORD_BCRYPT));
-        $admin->setPhone($_POST['phone']);
-        $admin->setAdress($_POST['adress']);
+        $client = new $this->model();
+        $client->setIdUser(uniqid(mt_rand(), true));
+        $client->setProfil(strtolower($logo));
+        $client->setFullNAme($_POST['name']);
+        $client->setUsername($_POST['username']);
+        $client->setEmail($_POST['email']);
+        $client->setPassword(password_hash($_POST['password'], PASSWORD_BCRYPT));
+        $client->setPhone($_POST['phone']);
+        $client->setAdress($_POST['adress']);
 
-        $this->service->create($admin);
+        $this->service->create($client);
     }
 
     public function edit()
@@ -75,24 +75,24 @@ class Admins extends Controller
             }
         }
 
-        $admin= new $this->model();
-        $admin->setIdUser($_POST['idUser']);
-        $admin->setProfil(strtolower($logo));
-        $admin->setFullNAme($_POST['name']);
-        $admin->setUsername($_POST['username']);
-        $admin->setEmail($_POST['email']);
-        $admin->setPassword(password_hash($_POST['password'], PASSWORD_BCRYPT));
-        $admin->setPhone($_POST['phone']);
-        $admin->setAdress($_POST['adress']);
+        $client= new $this->model();
+        $client->setIdUser($_POST['idUser']);
+        $client->setProfil(strtolower($logo));
+        $client->setFullNAme($_POST['nom']);
+        $client->setUsername($_POST['username']);
+        $client->setEmail($_POST['email']);
+        $client->setPassword(password_hash($_POST['password'], PASSWORD_BCRYPT));
+        $client->setPhone($_POST['phone']);
+        $client->setAdress($_POST['adress']);
 
-        $this->service->update($admin);
+        $this->service->update($client);
     }
 
     public function get($id)
     {
-        $admin= $this->service->fetch($id);
+        $client= $this->service->fetch($id);
 
-        echo json_encode($admin);
+        echo json_encode($client);
     }
 
     public function remove($id)

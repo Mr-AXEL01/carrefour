@@ -47,21 +47,32 @@
 
 
     </ul>
-    <a class="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-gray-50 hover:bg-gray-100 text-sm text-red-600 font-bold  rounded-xl transition duration-200"
-        href="#">
-        <span class="flex items-center">
-            <img class="w-5 mr-2" src='<?php echo URLROOT . "/public/images/Login.png"; ?>' alt="Login Image">
-            <span>Sign In</span>
-        </span>
-    </a>
+    <?php if(isset($_SESSION['username'])) : ?>
+        <a class="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-gray-50 hover:bg-gray-100 text-sm text-red-600 font-bold  rounded-xl transition duration-200"
+            href="#">
+            <span class="flex items-center">
+                <img class="w-5 mr-2" src='<?php echo URLROOT . "/public/images/la-personne.png"; ?>' alt="Login Image">
+                <span><?php echo $_SESSION['username'] ?></span>
+            </span>
+        </a>
+    <?php else : ?>
+        <a class="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-gray-50 hover:bg-gray-100 text-sm text-red-600 font-bold  rounded-xl transition duration-200"
+            href="#">
+            <span class="flex items-center">
+                <img class="w-5 mr-2" src='<?php echo URLROOT . "/public/images/Login.png"; ?>' alt="Login Image">
+                <span>Sign In</span>
+            </span>
+        </a>
 
-    <a class="hidden lg:inline-block py-2 px-6   text-sm text-blue-600 font-bold rounded-xl transition duration-200"
-        href="#">
-        <span class="flex items-center">
-            <img class="w-5 mr-2" src='<?php echo URLROOT . "/public/images/la-personne.png"; ?>' alt="Login Image">
-            <span>Sign Up</span>
-        </span>
-    </a>
+        <a class="hidden lg:inline-block py-2 px-6   text-sm text-blue-600 font-bold rounded-xl transition duration-200"
+            href="#">
+            <span class="flex items-center">
+                <img class="w-5 mr-2" src='<?php echo URLROOT . "/public/images/la-personne.png"; ?>' alt="Login Image">
+                <span>Sign Up</span>
+            </span>
+        </a>
+    <?php endif; ?>
+
     <a class="hidden lg:inline-block py-2 px-6   text-sm text-blue-600 font-bold rounded-xl transition duration-200"
         href="">
         <div class="absolute  right-7 z-10   text-xs font-bold px-1 py-0.5 rounded-sm">12</div>
