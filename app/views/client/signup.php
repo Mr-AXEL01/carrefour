@@ -113,7 +113,7 @@
                         <h1 class="font-bold text-3xl text-gray-900">REGISTER</h1>
                         <p>Enter your information to register</p>
                     </div>
-                    <form action="" id="#form">
+                    <form method="POST" action="" id="form" enctype="multipart/form-data">
                         <div>
                             <div class="flex -mx-3">
                                 <div class="w-1/2 px-3 mb-5">
@@ -125,7 +125,9 @@
                                         </div>
                                         <input type="text"
                                             class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
-                                            placeholder="John">
+                                            placeholder="John" 
+                                            name="name"
+                                            id="name">
                                     </div>
                                 </div>
                                 <div class="w-1/2 px-3 mb-5">
@@ -137,7 +139,9 @@
                                         </div>
                                         <input type="text"
                                             class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
-                                            placeholder="Smith">
+                                            placeholder="Smith"
+                                            name="username"
+                                            id="username">
                                     </div>
                                 </div>
                             </div>
@@ -151,7 +155,9 @@
                                         </div>
                                         <input type="text"
                                             class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
-                                            placeholder="US Fake Address in New York">
+                                            placeholder="US Fake Address in New York"
+                                            name="adress"
+                                            id="adress">
                                     </div>
                                 </div>
                                 <div class="w-1/2 px-3 mb-5">
@@ -163,7 +169,9 @@
                                         </div>
                                         <input type="number"
                                             class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
-                                            placeholder="+212 1234567">
+                                            placeholder="+212 1234567"
+                                            name="phone"
+                                            id="phone">
                                     </div>
                                 </div>
                             </div>
@@ -177,7 +185,9 @@
                                         </div>
                                         <input type="email"
                                             class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
-                                            placeholder="johnsmith@example.com">
+                                            placeholder="johnsmith@example.com"
+                                            name="email"
+                                            id="email">
                                     </div>
                                 </div>
                             </div>
@@ -191,7 +201,9 @@
                                         </div>
                                         <input type="password"
                                             class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
-                                            placeholder="************">
+                                            placeholder="************"
+                                            name="password"
+                                            id="password">
                                     </div>
                                 </div>
                             </div>
@@ -212,7 +224,7 @@
                                             <label for="file-upload"
                                                 class="relative cursor-pointer bg-black rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
                                                 <span class="">Upload a file</span>
-                                                <input id="file-upload" name="file-upload" type="file" class="sr-only">
+                                                <input id="logo" name="logo" type="file" class="sr-only">
                                             </label>
                                             <p class="pl-1 text-black">or drag and drop</p>
                                         </div>
@@ -225,9 +237,8 @@
                         </div>
                         <div class="flex my-5 -mx-3">
                             <div class="w-full px-3 mb-5">
-                                <button id="#add-button"
-                                    class="block w-full max-w-xs mx-auto bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold">REGISTER
-                                    NOW</button>
+                                <button id="submit" type = "submit"
+                                    class="block w-full max-w-xs mx-auto bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold">SUBMIT</button>
                             </div>
                         </div>
                 </div>
@@ -237,7 +248,10 @@
     </div>
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.7.1.js" crossorigin="anonymous"></script>
     <script src="<?php echo URLROOT; ?>/js/main.js"></script>
+    <script src="<?php echo URLROOT; ?>/js/config.js"></script>
+    <script src="<?php echo URLROOT; ?>/js/client.js"></script>
 
 </body>
 

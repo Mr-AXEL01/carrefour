@@ -1,5 +1,6 @@
-$(document).ready(function () {
-  const URLROOT = "http://localhost/carrefour";
+$(document).ready(function(){
+
+   
 
   // function draw(){
   //     $.ajax({
@@ -46,36 +47,61 @@ $(document).ready(function () {
   //     $('#submit').val('SUBMIT');
   // });
 
-  $(document).on("submit", "#form", function (e) {
-    e.preventDefault();
-    let formData = new FormData(this);
+    $(document).on('submit', '#form', function(e){
+        e.preventDefault();
+        let formData = new FormData(this);
+        
+        $.ajax({
+            url: URLROOT + '/clients/add',
+            type: 'POST',
+            data: formData,
+            contentType: false,
+            cache: false,
+            processData:false,
+            success: function(response){
 
-    $.ajax({
-      url: URLROOT + "/clients/add",
-      type: "POST",
-      data: formData,
-      contentType: false,
-      cache: false,
-      processData: false,
-      success: function (response) {
-        redirect("client/home");
-      },
+                // window.location.replace(URLROOT + '/home');
+                // console.log(response);
+            }
+        });
+
+        $.ajax({
+            url: URLROOT + '/login/logout',
+            type: 'GET',
+            success: function(response){
+                // window.location.replace(URLROOT + "/home");
+                // console.log(response);
+            }
+        });
+
+        $.ajax({
+            url: URLROOT + '/login/login',
+            type: 'POST',
+            data: formData,
+            contentType: false,
+            cache: false,
+            processData:false,
+            success: function(response){
+                // window.location.replace(URLROOT + "/home");
+                console.log(response);
+            }
+        });
+        
     });
-  });
 
-  $(document).on("click", "#edit-button", function () {
-    let id = $(this).data("id");
-    $.ajax({
-      url: URLROOT + "/Clients/get/" + id,
-      type: "GET",
-      success: function (response) {
-        let data = JSON.parse(response);
-        $("#submit").val("EDIT");
+    // $(document).on('click', '.edit-button', function(){
+    //     let id = $(this).data('id');
+    //     $.ajax({
+    //         url: URLROOT + '/products/get/' + id,
+    //         type: 'GET',
+    //         success: function(response){
+    //             let data = JSON.parse(response);
+    //             $('#submit').val('EDIT');
 
-        $("#id").val(data.id);
-        $("#name").val(data.name);
-        $("#address").val(data.address);
-      },
-    });
-  });
-});
+    //             $('#id').val(data.id);
+    //             $('#name').val(data.name);
+    //             $('#address').val(data.address);
+
+    //         }
+    //     });
+    // });

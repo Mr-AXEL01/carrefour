@@ -7,7 +7,7 @@
 
 class Core 
 {
-    protected $currentController = 'Client';
+    protected $currentController = 'ClientRouter';
     protected $currentMethod = 'index';
     protected $params = [];
 
@@ -15,27 +15,30 @@ class Core
     {
         $url = $this->getUrl();
 
-        // Name of controller is always an uppercase file
-        $controller = ucwords($url[0]);
-        if($controller == "Admin" || $controller == "Client") {
-            $controller = $controller . "Router";
-            if (file_exists("../app/controllers/$controller.php")) {
-                $this->currentController = $controller;
-                unset($url[0]);
+        if(count($url) > 1) {
+
+            // Name of controller is always an uppercase file
+            $controller = ucwords($url[0]);
+            if($controller == "Admin" || $controller == "Client") {
+                $controller = $controller . "Router";
+                if (file_exists("../app/controllers/$controller.php")) {
+                    $this->currentController = $controller;
+                    unset($url[0]);
+                }
+
             } else {
-                $url[1] = $url[0];
+
+                if (file_exists("../app/controllers/$controller.php")) {
+                    $this->currentController = $controller;
+                    unset($url[0]);
+                }
+
             }
 
-        } else {
-
-            if (file_exists("../app/controllers/$controller.php")) {
-                $this->currentController = $controller;
-                unset($url[0]);
-            } else {
-                $url[1] = $url[0];
-            }
-
+        } else if(count($url) == 1) {
+            $url[1] = $url[0];
         }
+
 
         require_once "../app/controllers/{$this->currentController}.php";
         $this->currentController = new $this->currentController;
