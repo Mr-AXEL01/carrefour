@@ -3,7 +3,7 @@ $(document).ready(function () {
   
     function draw() {
       $.ajax({
-        url: URLROOT + "/category/display",
+        url: URLROOT + "/categories/display",
         type: "GET",
         success: function (response) {
           console.log(response);
@@ -16,7 +16,7 @@ $(document).ready(function () {
             row = $("<tr>", { class: "h-10" });
             for (const [key, value] of Object.entries(e)) {
             
-                  if(key=== 'profil'){
+                  if(key=== 'picture'){
   
                       element = $("<td>", { class: "px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left" });
                       element.html(`<img class="h-[100px] w-[100px]" src="${URLROOT}/uploads/${value}">`);
@@ -64,7 +64,7 @@ $(document).ready(function () {
       $("#id").val("");
       $("#name").val("");
       $("#description").val("");
-      $("#logo").val("");
+      $("#picture").val("");
     });
   
     $(document).on("submit", "#form", function (e) {
@@ -72,7 +72,7 @@ $(document).ready(function () {
       let formData = new FormData(this);
           console.log(formData);
         $.ajax({
-          url: URLROOT + "/category/add",
+          url: URLROOT + "/categories/add",
           type: "POST",
           data: formData,
           contentType: false,
@@ -89,7 +89,7 @@ $(document).ready(function () {
     $(document).on("click", ".edit-button", function () {
       let id = $(this).data("id");
       $.ajax({
-        url: URLROOT + "/category/get/" + id,
+        url: URLROOT + "/categories/get/" + id,
         type: "GET",
         success: function (response) {
           let data = JSON.parse(response);
@@ -108,7 +108,7 @@ $(document).ready(function () {
     $(document).on("click", ".delete-button", function () {
       let id = $(this).data("id");
       $.ajax({
-        url: URLROOT + "/category/remove/" + id,
+        url: URLROOT + "/categories/remove/" + id,
         type: "GET",
         success: function (response) {
           draw();

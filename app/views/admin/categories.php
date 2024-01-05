@@ -98,6 +98,7 @@
                         <input type="text" name="description" id="description"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
                     </div>
+                    <input type="hidden" name="id" id="id" value="">
                     <div class="col-span-2">
                         <label for="logo"
                             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Picture</label>
@@ -113,7 +114,7 @@
                                     here <br /> or <a href="" id="" class="text-blue-600 hover:underline">select a
                                         file</a> from your computer</p>
                             </div>
-                            <input name="logo" id="logo" type="file" class="hidden">
+                            <input name="picture" id="picture" type="file" class="hidden">
                         </label>
                     </div>
 
