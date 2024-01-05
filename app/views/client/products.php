@@ -24,7 +24,7 @@
             echo '<h2 class="text-xl font-bold">' . $category->name . '</h2>';
             echo '<div class="flex flex-wrap space-x-4">';
                 echo '<div class="bg-white p-4 rounded-md shadow-md">';
-                echo '<img src="' . $product->picture. '" alt="' . $product->name. '" class="mb-2 rounded-md">';
+                echo '<img src="' . URLROOT . '/public/uploads/' . $product->picture. '" alt="' . $product->name. '" class="mb-2 rounded-md">';
                 echo '<div class="bg-blue-700 text-white px-4 py-2 rounded-md mb-2">';
                 echo 'Price: $' . $product->price;
                 echo '</div>';
