@@ -40,7 +40,7 @@ $(document).ready(function () {
             type: "button",
           });
           button.attr("data-id", `${e.idProduct}`);
-          value = `<img src="${URLROOT}/src/supprimer.png" class="mt-10 h-5 sm:h-6" />`   ;
+          value = `<img src="${URLROOT}/src/supprimer.png" class="mt-10 h-5 sm:h-6" />` ;
           button.html(value);
           element.append(button);
 

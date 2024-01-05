@@ -24,13 +24,13 @@
 
 
             <form action="" class="bg-gray-400 mb-0 mt-4 space-y-4 rounded-lg p-4 shadow-lg sm:p-6 lg:p-8">
-
+                <input type="hidden" name="id" value="<?php echo $id ?>">
 
                 <div>
                     <label for="email" class="sr-only">password</label>
 
                     <div class="relative">
-                        <input type="password" class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+                        <input type="password" id="password" class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
                             placeholder="Enter new password" />
 
                         <span class="absolute inset-y-0 end-0 grid place-content-center px-4">
@@ -49,7 +49,7 @@
                     <label for="password" class="sr-only">Confirm Password</label>
 
                     <div class="relative">
-                        <input type="password" class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+                        <input type="password" id="confirm-password" class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
                             placeholder="Confirm password" />
 
                         <span class="absolute inset-y-0 end-0 grid place-content-center px-4">
