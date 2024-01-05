@@ -48,29 +48,29 @@
 
     </ul>
     <?php if(isset($_SESSION['username'])) : ?>
-        <a class="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-gray-50 hover:bg-gray-100 text-sm text-red-600 font-bold  rounded-xl transition duration-200"
-            href="#">
-            <span class="flex items-center">
-                <img class="w-5 mr-2" src='<?php echo URLROOT . "/public/images/la-personne.png"; ?>' alt="Login Image">
-                <span><?php echo $_SESSION['username'] ?></span>
-            </span>
-        </a>
+    <a class="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-gray-50 hover:bg-gray-100 text-sm text-red-600 font-bold  rounded-xl transition duration-200"
+        href="#">
+        <span class="flex items-center">
+            <img class="w-5 mr-2" src='<?php echo URLROOT . "/public/images/la-personne.png"; ?>' alt="Login Image">
+            <span><?php echo $_SESSION['username'] ?></span>
+        </span>
+    </a>
     <?php else : ?>
-        <a class="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-gray-50 hover:bg-gray-100 text-sm text-red-600 font-bold  rounded-xl transition duration-200"
-            href="#">
-            <span class="flex items-center">
-                <img class="w-5 mr-2" src='<?php echo URLROOT . "/public/images/Login.png"; ?>' alt="Login Image">
-                <span>Sign In</span>
-            </span>
-        </a>
+    <a class="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-gray-50 hover:bg-gray-100 text-sm text-red-600 font-bold  rounded-xl transition duration-200"
+        href="#">
+        <span class="flex items-center">
+            <img class="w-5 mr-2" src='<?php echo URLROOT . "/public/images/Login.png"; ?>' alt="Login Image">
+            <span>Sign In</span>
+        </span>
+    </a>
 
-        <a class="hidden lg:inline-block py-2 px-6   text-sm text-blue-600 font-bold rounded-xl transition duration-200"
-            href="#">
-            <span class="flex items-center">
-                <img class="w-5 mr-2" src='<?php echo URLROOT . "/public/images/la-personne.png"; ?>' alt="Login Image">
-                <span>Sign Up</span>
-            </span>
-        </a>
+    <a class="hidden lg:inline-block py-2 px-6   text-sm text-blue-600 font-bold rounded-xl transition duration-200"
+        href="#">
+        <span class="flex items-center">
+            <img class="w-5 mr-2" src='<?php echo URLROOT . "/public/images/la-personne.png"; ?>' alt="Login Image">
+            <span>Sign Up</span>
+        </span>
+    </a>
     <?php endif; ?>
 
     <a class="hidden lg:inline-block py-2 px-6   text-sm text-blue-600 font-bold rounded-xl transition duration-200"
@@ -84,6 +84,9 @@
             </path>
         </svg>
     </a>
+
+    <!-- =================mobile menu=============== -->
+
 </nav>
 <div class="navbar-menu relative z-50 hidden">
     <div class="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"></div>
@@ -119,8 +122,7 @@
         </div>
         <div class="mt-auto">
             <div class="pt-6">
-                <!-- <a class="block px-4 py-3 mb-3 leading-loose text-xs text-center font-semibold leading-none bg-gray-50 hover:bg-gray-100 rounded-xl"
-                    href="#">Sign in</a> -->
+
                 <a class="block px-4 py-3 mb-3 leading-loose text-red-500 text-xs text-center font-semibold leading-none bg-gray-50 hover:bg-gray-100 rounded-xl"
                     href="#">
                     <span class="flex items-center">
@@ -129,8 +131,7 @@
                         <span>Sign In</span>
                     </span>
                 </a>
-                <!-- <a class="block px-4 py-3 mb-2 leading-loose text-xs text-center text-white font-semibold bg-blue-600 hover:bg-blue-700  rounded-xl"
-                    href="#">Sign Up</a> -->
+
                 <a class="block px-4 py-3 mb-2 leading-loose text-xs text-blue-600 text-center  font-semibold    rounded-xl"
                     href="#">
                     <span class="flex items-center">
