@@ -64,7 +64,7 @@
                     </div>
                 </div>
 
-                <button type="submit"
+                <button type="submit" id="edit-button"
                     class="block w-full rounded-lg bg-indigo-600 px-5 py-3 text-sm font-medium text-white">
                     update
                 </button>
@@ -73,6 +73,7 @@
             </form>
         </div>
     </div>
+    <script src="<?php echo URLROOT; ?>/js/main.js"></script>
 </body>
 
 </html>

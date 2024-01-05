@@ -24,7 +24,7 @@ $(document).ready(function () {
           });
           button = $("<button>", { class: "delete-button", type: "button" });
           button.attr("data-id", `${e.idUser}`);
-          value = '<img src="<?php echo URL_ROOT ?>/src/editer.png" class="h-4 sm:h-6" />';
+          value = '<img src="<?php echo URLROOT ?>/src/editer.png" class="h-4 sm:h-6" />';
           button.html(value);
           element.append(button);
           span = $("<span>", { class: "" });
@@ -32,7 +32,7 @@ $(document).ready(function () {
           span.attr("data-modal-toggle", `crud-modal`);
           button = $("<button>", { class: "edit-button", type: "button" });
           button.attr("data-id", `${e.idUser}`);
-          value = '<img src="<?php echo URL_ROOT ?>/src/editer.png" class="h-4 sm:h-6" />';
+          value = '<img src="<?php echo URLROOT ?>/src/editer.png" class="h-4 sm:h-6" />';
           button.html(value);
           span.html(button);
           element.append(span);
