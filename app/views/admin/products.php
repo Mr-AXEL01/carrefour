@@ -51,6 +51,10 @@
                     </tr>
                 </thead>
 
+                <tbody id="tbody">
+
+                </tbody>
+
 
 
             </table>
@@ -74,7 +78,7 @@
                 <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
                     Ajouter Product
                 </h3>
-                <button type="button"
+                <button type="button" id="#add-button"
                     class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
                     data-modal-toggle="crud-modal">
                     <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -86,25 +90,25 @@
                 </button>
             </div>
 
-            <form action="<?= URLROOT ?>" method="POST" class="p-4 md:p-5">
+            <form action="<?= URLROOT ?>" id="#form" method="POST" class="p-4 md:p-5">
                 <div class="grid gap-4 mb-4 grid-cols-2">
 
                     <div class="col-span-2">
                         <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nom de
                             Product</label>
-                        <input type="text" name="Product" id="Product"
+                        <input type="text" name="name" id="name"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
                     </div>
                     <div class="col-span-2">
                         <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                             Quantité</label>
-                        <input type="text" name="Product" id="Product"
+                        <input type="text" name="qty" id="qty"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
                     </div>
                     <div class="col-span-2">
                         <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Prix
                             MAD</label>
-                        <input type="number" name="prix" id="prix"
+                        <input type="number" name="price" id="price"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
                     </div>
                     <div class="col-span-2">
@@ -129,8 +133,9 @@
                     </div>
 
 
-                    <button type="submit" name="submit"
-                        class=" bg-[#03045e] hover:bg-[#c1121f] text-white inline-flex items-center  focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-[110px]">
+                    <button type="submit" name="submit" id="submit" class=" bg-[#03045e] hover:bg-[#c1121f] text-white inline-flex items-center focus:ring-4
+                        focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center
+                        dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-[110px]">
                         <svg class="me-1 -ms-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
                             xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd"
