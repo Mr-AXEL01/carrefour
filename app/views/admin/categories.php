@@ -2,7 +2,7 @@
 
 
 
-<div class="w-full xl:w-10/12 mb-12 mb-[400px] px-4 mx-auto ">
+<div class="w-full xl:w-10/12   px-4 mx-auto ">
     <div class="relative flex flex-col min-w-0 break-words  w-full mb-6 shadow-lg rounded ">
         <div class="rounded-t mb-0 px-4 py-3 border-0 bg-[#0077b6] ">
             <div class="flex flex-wrap items-center text-white ">

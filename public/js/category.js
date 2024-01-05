@@ -35,16 +35,16 @@ $(document).ready(function () {
                 " h-full flex justify-evenly items-center rounded-sm",
             });
             button = $("<button>", { class: "delete-button", type: "button" });
-            button.attr("data-id", `${e.idUser}`);
-            value = `<img src="${URLROOT}/src/supprimer.png" class="h-4 sm:h-6  items-center" />`;
+            button.attr("data-id", `${e.idCategory}`);
+            value = `<img src="${URLROOT}/src/supprimer.png" class="h-4 sm:h-6  mt-10 " />`;
             button.html(value);
             element.append(button);
             span = $("<span>", { class: "" });
             span.attr("data-modal-target", `crud-modal`);
             span.attr("data-modal-toggle", `crud-modal`);
             button = $("<button>", { class: "edit-button", type: "button" });
-            button.attr("data-id", `${e.idUser}`);
-            value = `<img src="${URLROOT}/src/editer.png" class="h-4 sm:h-6" />`;
+            button.attr("data-id", `${e.idCategory}`);
+            value = `<img src="${URLROOT}/src/editer.png" class="h-4 sm:h-6 mt-10 " />`;
             button.html(value);
             span.html(button);
             element.append(span);
