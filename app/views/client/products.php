@@ -1,7 +1,5 @@
 <?php require APPROOT . '/views/inc/header.php'; ?>
 
-<?php //var_dump($data) ?>
-
 <main>
     <section class="mt-5">
         <div class="container flex justify-between">
@@ -17,21 +15,17 @@
             </div>
         </div>
     </section>
-    <section class="products-by-category">
+    <section class="products-by-category m-4 w-full flex flex-wrap space-x-10">
         <?php
         foreach ($data['products'] as $product) {
-            echo '<div class="mb-4">';
-            echo '<h2 class="text-xl font-bold">' . $category->name . '</h2>';
-            echo '<div class="flex flex-wrap space-x-4">';
-                echo '<div class="bg-white p-4 rounded-md shadow-md">';
-                echo '<img src="' . URLROOT . '/public/uploads/' . $product->picture. '" alt="' . $product->name. '" class="mb-2 rounded-md">';
-                echo '<div class="bg-blue-700 text-white px-4 py-2 rounded-md mb-2">';
-                echo 'Price: $' . $product->price;
-                echo '</div>';
-                echo '<h3 class="text-blue-700 text-lg font-semibold mb-2">' . $product->name . '</h3>';
-                echo '<button class="bg-blue-700 text-white px-4 py-2 rounded-md hover:bg-blue-500">Add to Cart</button>';
-                echo '</div>';
-            
+            echo '<div class="product-card bg-gray-100  p-4 rounded-md shadow-md" style="width: 200px; height: 300px;">';
+            echo '<img src="' . URLROOT . '/public/uploads/' . $product->picture. '" alt="' . $product->name. '" class="mb-2 flex items-center justify-center rounded-md product-image" style="width: 100%; height: 60%;">';
+            echo '<div class="product-details">';
+            echo '<div class="bg-blue-700 text-white text-center px-4 py-2 rounded-md mb-2">';
+            echo $product->price.'DH';
+            echo '</div>';
+            echo '<h3 class="text-blue-700 text-center font-semibold mb-2">' . $product->name . '</h3>';
+            echo '<button class="bg-blue-700 text-white px-4 py-2 rounded-md hover:bg-blue-500">Add to Cart</button>';
             echo '</div>';
             echo '</div>';
         }
