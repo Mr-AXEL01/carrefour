@@ -84,7 +84,7 @@
                 </button>
             </div>
 
-            <form action="<?= URLROOT ?>" method="POST" class="p-4 md:p-5">
+            <form action="" method="POST" class="p-4 md:p-5">
                 <div class="grid gap-4 mb-4 grid-cols-2">
                     <div class="col-span-2">
                         <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nom de

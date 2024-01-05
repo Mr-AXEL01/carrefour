@@ -1,6 +1,4 @@
 <?php 
-session_start();
-var_dump($_SESSION);
 require APPROOT . '/views/inc/sidebarAdmin.php'; ?>
 
 
