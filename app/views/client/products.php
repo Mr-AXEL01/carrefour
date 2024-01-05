@@ -37,3 +37,5 @@
         ?>
     </section>
 </main>
+
+<?php require APPROOT . '/views/inc/footer.php'; ?>
