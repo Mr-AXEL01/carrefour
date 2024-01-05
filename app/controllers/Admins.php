@@ -46,7 +46,7 @@ class Admins extends Controller
         $admin->setFullNAme($_POST['name']);
         $admin->setUsername($_POST['username']);
         $admin->setEmail($_POST['email']);
-        $admin->setPassword($_POST['password']);
+        $admin->setPassword(password_hash($_POST['password'], PASSWORD_BCRYPT));
         $admin->setPhone($_POST['phone']);
         $admin->setAdress($_POST['adress']);
 
@@ -78,10 +78,10 @@ class Admins extends Controller
         $admin= new $this->model();
         $admin->setIdUser($_POST['idUser']);
         $admin->setProfil(strtolower($logo));
-        $admin->setFullNAme($_POST['nom']);
+        $admin->setFullNAme($_POST['name']);
         $admin->setUsername($_POST['username']);
         $admin->setEmail($_POST['email']);
-        $admin->setPassword($_POST['password']);
+        $admin->setPassword(password_hash($_POST['password'], PASSWORD_BCRYPT));
         $admin->setPhone($_POST['phone']);
         $admin->setAdress($_POST['adress']);
 

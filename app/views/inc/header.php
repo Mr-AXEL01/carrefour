@@ -16,7 +16,7 @@
     <link rel="stylesheet"
         href="https://demos.creative-tim.com/notus-js/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css">
 
-    <script src="https://code.jquery.com/jquery-3.7.1.js" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" crossorigin="anonymous"></script>
     
     <title><?php echo SITENAME; ?></title>
 </head>
@@ -24,4 +24,3 @@
 <body>
     <?php require APPROOT . '/views/inc/navbar.php'; ?>
     <div class="">
-        <!-- Begin Main Container -->
