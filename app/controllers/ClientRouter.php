@@ -8,7 +8,6 @@ class ClientRouter extends Controller
 
     public function index()
     {
-        
         $this->view('client/home');
     }
 

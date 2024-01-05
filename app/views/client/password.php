@@ -30,11 +30,12 @@
                     <p class="card-text py-2">
                         Enter your email address and we'll send you an email with instructions to reset your password.
                     </p>
-                    <div class="form-outline">
-                        <input type="email" id="typeEmail" placeholder="Email input" class="form-control my-3" />
+                    <form id="myForm" class="form-outline">
+                        <input type="email" id="typeEmail" name="email" placeholder="Email input" class="form-control my-3" />
+                        <input type="hidden" id="typeEmail" name="link" value="" placeholder="Email input" class="form-control my-3" />
                         <label class="form-label" for="typeEmail"></label>
-                    </div>
-                    <a href="#" class="btn btn-primary w-100">Reset password</a>
+                        <input type="submit" id="submit" value="SUBMIT" class="pass-btn btn btn-primary w-100" />
+                    </form>
                     <div class="d-flex justify-content-between mt-4">
                         <a class="" href="<?= URLROOT . '/client/login'?>">Login</a>
                         <a class="" href="#">Register</a>
@@ -42,6 +43,46 @@
                 </div>
             </div>
         </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js" crossorigin="anonymous"></script>
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"
+    ></script>
+
+    <script type="text/javascript">      (function () {
+        emailjs.init("mlqiqm_6KrTPxjGJM");
+      })();
+    </script>
+
+<script>
+      // listen to the form submission
+      document
+        .getElementById("myForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          const serviceID = "service_g1kafbw";
+          const templateID = "template_bsycykd";
+
+          // send the email here
+          emailjs.sendForm(serviceID, templateID, this).then(
+            (response) => {
+              console.log("SUCCESS!", response.status, response.text);
+              alert("SUCCESS!");
+            },
+            (error) => {
+              console.log("FAILED...", error);
+              alert("FAILED...", error);
+            }
+          );
+        });
+    </script>
+
+
+    <script src="<?php echo URLROOT; ?>/js/config.js"></script>
+    <script src="<?php echo URLROOT; ?>/js/password.js"></script>
 </body>
 
 </html>
