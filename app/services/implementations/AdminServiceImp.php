@@ -59,8 +59,9 @@ class AdminServiceImp implements AdminService
         $adress = $admin->getAdress();
 
 
-        $this->db->query('UPDATE user SET fullName = :fullName, username = :username, email = :email, password = :password, phone = :phone, adress = :adress WHERE idUser = :idAdmin)');
+        $this->db->query('UPDATE user SET fullName = :fullName, profil = :profil, username = :username, email = :email, password = :password, phone = :phone, adress = :adress WHERE idUser = :idAdmin)');
         $this->db->bind(':idAdmin', $idAdmin);
+        $this->db->bind(':profil', $profil);
         $this->db->bind(':fullName', $fullName);
         $this->db->bind(':username', $username);
         $this->db->bind(':email', $email);

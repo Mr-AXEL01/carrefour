@@ -29,6 +29,7 @@ class ClientServiceImp implements ClientService
         $this->db->bind(':email', $email);
         $this->db->bind(':password', $password);
         $this->db->bind(':phone', $phone);
+        $this->db->bind(':adress', $adress);
 
         $this->db->execute();
 
